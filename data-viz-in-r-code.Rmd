@@ -13,8 +13,59 @@ knitr::opts_chunk$set(echo = TRUE, message = FALSE)
 # Set the default size of figures
 knitr::opts_chunk$set(fig.width = 8, fig.height = 5)  
 
-library(ipeds)
+library(here)
 library(tidyverse)
+
+```
+
+
+Get directory information and select a group of institutions we're interested in.
+
+```{r get-inst-ids}
+
+directory <- read_csv(here('data', 'ipeds_2019', 'hd2019.csv'))
+
+inst_list <- directory %>%
+  filter(INSTNM %in% c(
+    'University of Arizona',
+    'University of California-Davis',
+    'University of California-Los Angeles',
+    'University of Florida',
+    'University of Illinois at Urbana-Champaign',
+    'University of Iowa',
+    'University of Maryland-College Park',
+    'Michigan State University',
+    'University of Minnesota-Twin Cities',
+    'University of North Carolina at Chapel Hill',
+    'Ohio State University-Main Campus',
+    'Pennsylvania State University-Main Campus',
+    'Texas A & M University-College Station',
+    'The University of Texas at Austin',
+    'University of Washington-Seattle Campus',
+    'University of Wisconsin-Madison')) %>% 
+  select(INSTNM, UNITID)
+
+```
+
+
+Get the IPEDS enrollment data for our institutions of interest.
+
+```{r get-enrlmnt-data}
+
+enrlmnt <- read_csv(here('data', 'ipeds_2019', 'ef2019a.csv'))
+
+inst_enrlmnt <- left_join(inst_list, enrlmnt, by = 'UNITID')
+
+```
+
+
+Get the IPEDS Completions data for our institutions of interest.
+
+```{r get-compl-data}
+
+compl <- read_csv(here('data', 'ipeds_2019', 'c2019_a.csv'))
+
+inst_compl <- left_join(inst_list, compl, by = 'UNITID')
 
 ```
 
