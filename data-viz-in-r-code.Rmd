@@ -1,0 +1,20 @@
+---
+title: "Data Visualization in R"
+author: "Jenn Schilling"
+date: "2/26/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+
+# Set defualt chunk options
+knitr::opts_chunk$set(echo = TRUE, message = FALSE) 
+
+# Set the default size of figures
+knitr::opts_chunk$set(fig.width = 8, fig.height = 5)  
+
+library(ipeds)
+library(tidyverse)
+
+```
+
