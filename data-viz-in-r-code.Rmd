@@ -26,7 +26,8 @@ Get directory information and select a group of institutions we're interested in
 directory <- read_csv(here('data', 'ipeds_2019', 'hd2019.csv'))
 
 inst_list <- directory %>%
-  filter(INSTNM %in% c(
+  janitor::clean_names() %>%
+  filter(instnm %in% c(
     'University of Arizona',
     'University of California-Davis',
     'University of California-Los Angeles',
@@ -43,7 +44,42 @@ inst_list <- directory %>%
     'The University of Texas at Austin',
     'University of Washington-Seattle Campus',
     'University of Wisconsin-Madison')) %>% 
-  select(INSTNM, UNITID)
+  mutate(control = "Public", # All the same
+         hdegrofr1 = "Doctor's degree - research/scholarship and professional practice", # All the same
+         hospital = ifelse(hospital == 1, "Yes", "No"),
+         medical = ifelse(medical == 1, "Yes", "No"),
+         locale = case_when(
+           locale == 11 ~ "City: Large",
+           locale == 12 ~ "City: Midsize",
+           locale == 13 ~ "City: Small",
+           locale == 21 ~ "Suburb: Large",
+           locale == 23 ~ "Suburb: Small",
+           TRUE ~ "Other" ),
+         instsize = "20,000 and above", # All the same
+         landgrnt = ifelse(landgrnt == 1, "Land Grant Institution", "Not Land Grant Institution"),
+         c18basic = "Doctoral Universities: Very High Research Activity", # All the same
+         c18enprf = case_when(
+           c18enprf == 4 ~ "High undergraduate",
+           c18enprf == 5 ~ "Majority undergraduate",
+           TRUE ~ "Other"),
+         c18szset = case_when(
+           c18szset == 15 ~ "Four-year, large, primarily nonresidential",
+           c18szset == 16 ~ "Four-year, large, primarily residential",
+           c18szset == 17 ~ "Four-year, large, highly residential",
+           TRUE ~ "Other")
+         ) %>%
+  select(unitid, instnm, city, stabbr, control, hdegrofr1, hospital, medical, locale, instsize, landgrnt, c18basic, c18enprf, c18szset)
+
+```
+
+
+Get the IPEDS Admissions data for our institutions of interest.
+
+```{r get-adm-data}
+
+adm <- read_csv(here('data', 'ipeds_2019', 'adm2019.csv')) %>% janitor::clean_names()
+
+inst_adm <- left_join(inst_list, adm, by = 'unitid')
 
 ```
 
@@ -52,9 +88,9 @@ Get the IPEDS enrollment data for our institutions of interest.
 
 ```{r get-enrlmnt-data}
 
-enrlmnt <- read_csv(here('data', 'ipeds_2019', 'ef2019a.csv'))
+enrlmnt <- read_csv(here('data', 'ipeds_2019', 'ef2019a.csv')) %>% janitor::clean_names()
 
-inst_enrlmnt <- left_join(inst_list, enrlmnt, by = 'UNITID')
+inst_enrlmnt <- left_join(inst_list, enrlmnt, by = 'unitid')
 
 ```
 
@@ -63,9 +99,19 @@ Get the IPEDS Completions data for our institutions of interest.
 
 ```{r get-compl-data}
 
-compl <- read_csv(here('data', 'ipeds_2019', 'c2019_a.csv'))
+compl <- read_csv(here('data', 'ipeds_2019', 'c2019_a.csv')) %>% janitor::clean_names()
 
-inst_compl <- left_join(inst_list, compl, by = 'UNITID')
+inst_compl <- left_join(inst_list, compl, by = 'unitid')
+
+```
+
+
+Data Processing - Admissions Data
+
+```{r process-enrlmnt-data}
+
+inst_enrlmnt <- 
+
 
 ```
 
