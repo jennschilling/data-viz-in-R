@@ -81,16 +81,60 @@ adm <- read_csv(here('data', 'ipeds_2019', 'adm2019.csv')) %>% janitor::clean_na
 
 inst_adm <- left_join(inst_list, adm, by = 'unitid')
 
+# Process Admissions Data
+inst_adm <- inst_adm %>%
+  rename(n_applicants = applcn,
+         n_admits = admssn,
+         n_enrl = enrlt,
+         n_sat = satnum,
+         pct_sat = satpct,
+         n_act = actnum,
+         pct_act = actpct,
+         test_req = admcon7) %>%
+  mutate(sat_score = (satvr25 + satvr75) / 2 + (satmt25 + satmt75) / 2,
+         act_score = actcm25 + actcm75 / 2,
+         test_req = case_when(
+           test_req == 1 ~ "Required",
+           test_req == 5 ~ "Considered by not required",
+           test_req == 2 ~ "Recommended",
+           TRUE ~ "Other"
+         )) %>%
+  select(unitid, n_applicants, n_admits, n_enrl, test_req, n_sat, pct_sat, sat_score, n_act, pct_act, act_score)
+
 ```
 
 
-Get the IPEDS enrollment data for our institutions of interest.
+Get the IPEDS Enrollment data for our institutions of interest.
 
 ```{r get-enrlmnt-data}
 
 enrlmnt <- read_csv(here('data', 'ipeds_2019', 'ef2019a.csv')) %>% janitor::clean_names()
 
 inst_enrlmnt <- left_join(inst_list, enrlmnt, by = 'unitid')
+
+# Process Enrollment Data
+inst_enrlmnt <- inst_enrlmnt %>%
+  filter(efalevel == 1 | # All students total
+         efalevel == 2 | # All students undergraduate total
+         efalevel == 12 # All students graduate total
+           ) %>%
+  mutate(lstudy = case_when(
+      lstudy == 1 ~ "Undergraduate",
+      lstudy == 3 ~ "Graduate",
+      lstudy == 4 ~ "All students",
+      TRUE ~ "Other")) %>%
+  rename(n_enrl = eftotlt,
+         n_enrl_m = eftotlm,
+         n_enrl_w = eftotlw) %>%
+  select(unitid, lstudy, n_enrl, n_enrl_m, n_enrl_w) %>%
+  pivot_longer(cols = n_enrl:n_enrl_w,
+               names_to = "gender",
+               values_to = "n_enrl") %>%
+  mutate(gender = case_when(
+    gender == "n_enrl" ~ "Total",
+    gender == "n_enrl_m" ~ "Men",
+    gender == "n_enrl_w" ~ "Women"
+  ))
 
 ```
 
@@ -99,19 +143,35 @@ Get the IPEDS Completions data for our institutions of interest.
 
 ```{r get-compl-data}
 
-compl <- read_csv(here('data', 'ipeds_2019', 'c2019_a.csv')) %>% janitor::clean_names()
+compl <- read_csv(here('data', 'ipeds_2019', 'c2019_c.csv')) %>% janitor::clean_names()
 
 inst_compl <- left_join(inst_list, compl, by = 'unitid')
 
+# Process completions data
+inst_compl <- inst_compl %>%
+  mutate(awlevelc = case_when(
+    awlevelc == "05" ~ "Bachelor's degree",
+    awlevelc == "07" ~ "Master's degree",
+    awlevelc == "09" ~ "Doctor's degree",
+    TRUE ~ "Other"
+  )) %>%
+  filter(awlevelc != "Other") %>%
+  rename(n_deg = cstotlt,
+         n_deg_m = cstotlm,
+         n_deg_w = cstotlw) %>%
+  select(unitid, awlevelc, n_deg, n_deg_m, n_deg_w) %>%
+  pivot_longer(cols = n_deg:n_deg_w,
+               names_to = "gender",
+               values_to = "n_deg") %>%
+  mutate(gender = case_when(
+    gender == "n_deg" ~ "Total",
+    gender == "n_deg_m" ~ "Men",
+    gender == "n_deg_w" ~ "Women"
+  ))
+
 ```
 
 
-Data Processing - Admissions Data
-
-```{r process-enrlmnt-data}
-
-inst_enrlmnt <- 
 
 
-```
 
