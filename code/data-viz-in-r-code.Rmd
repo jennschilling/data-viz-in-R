@@ -77,7 +77,11 @@ Get the IPEDS Admissions data for our institutions of interest.
 
 ```{r get-adm-data}
 
-adm <- read_csv(here('data', 'ipeds_2019', 'adm2019.csv')) %>% janitor::clean_names()
+adm_17 <- read_csv(here('data', 'ipeds_2017', 'adm2017_rv.csv')) %>% janitor::clean_names() %>% mutate(year = 2017)
+adm_18 <- read_csv(here('data', 'ipeds_2018', 'adm2018_rv.csv')) %>% janitor::clean_names() %>% mutate(year = 2018)
+adm_19 <- read_csv(here('data', 'ipeds_2019', 'adm2019.csv')) %>% janitor::clean_names() %>% mutate(year = 2019)
+
+adm <- rbind(adm_17, adm_18, adm_19)
 
 inst_adm <- left_join(inst_list, adm, by = 'unitid')
 
@@ -99,7 +103,7 @@ inst_adm <- inst_adm %>%
            test_req == 2 ~ "Recommended",
            TRUE ~ "Other"
          )) %>%
-  select(unitid, n_applicants, n_admits, n_enrl, test_req, n_sat, pct_sat, sat_score, n_act, pct_act, act_score)
+  select(year, unitid, n_applicants, n_admits, n_enrl, test_req, n_sat, pct_sat, sat_score, n_act, pct_act, act_score)
 
 ```
 
@@ -108,7 +112,11 @@ Get the IPEDS Enrollment data for our institutions of interest.
 
 ```{r get-enrlmnt-data}
 
-enrlmnt <- read_csv(here('data', 'ipeds_2019', 'ef2019a.csv')) %>% janitor::clean_names()
+enrlmnt_17 <- read_csv(here('data', 'ipeds_2017', 'ef2017a_rv.csv')) %>% janitor::clean_names() %>% mutate(year = 2017)
+enrlmnt_18 <- read_csv(here('data', 'ipeds_2018', 'ef2018a_rv.csv')) %>% janitor::clean_names() %>% mutate(year = 2018)
+enrlmnt_19 <- read_csv(here('data', 'ipeds_2019', 'ef2019a.csv')) %>% janitor::clean_names() %>% mutate(year = 2019)
+
+enrlmnt <- rbind(enrlmnt_17, enrlmnt_18, enrlmnt_19)
 
 inst_enrlmnt <- left_join(inst_list, enrlmnt, by = 'unitid')
 
@@ -126,7 +134,7 @@ inst_enrlmnt <- inst_enrlmnt %>%
   rename(n_enrl = eftotlt,
          n_enrl_m = eftotlm,
          n_enrl_w = eftotlw) %>%
-  select(unitid, lstudy, n_enrl, n_enrl_m, n_enrl_w) %>%
+  select(year, unitid, lstudy, n_enrl, n_enrl_m, n_enrl_w) %>%
   pivot_longer(cols = n_enrl:n_enrl_w,
                names_to = "gender",
                values_to = "n_enrl") %>%
@@ -143,7 +151,11 @@ Get the IPEDS Completions data for our institutions of interest.
 
 ```{r get-compl-data}
 
-compl <- read_csv(here('data', 'ipeds_2019', 'c2019_c.csv')) %>% janitor::clean_names()
+compl_17 <- read_csv(here('data', 'ipeds_2017', 'c2017_c_rv.csv')) %>% janitor::clean_names() %>% mutate(year = 2017)
+compl_18 <- read_csv(here('data', 'ipeds_2018', 'c2018_c_rv.csv')) %>% janitor::clean_names() %>% mutate(year = 2018)
+compl_19 <- read_csv(here('data', 'ipeds_2019', 'c2019_c.csv')) %>% janitor::clean_names() %>% mutate(year = 2019)
+
+compl <- rbind(compl_17, compl_18, compl_19)
 
 inst_compl <- left_join(inst_list, compl, by = 'unitid')
 
@@ -159,7 +171,7 @@ inst_compl <- inst_compl %>%
   rename(n_deg = cstotlt,
          n_deg_m = cstotlm,
          n_deg_w = cstotlw) %>%
-  select(unitid, awlevelc, n_deg, n_deg_m, n_deg_w) %>%
+  select(year, unitid, awlevelc, n_deg, n_deg_m, n_deg_w) %>%
   pivot_longer(cols = n_deg:n_deg_w,
                names_to = "gender",
                values_to = "n_deg") %>%
