@@ -1,7 +1,7 @@
 ---
 title: "Data Visualization in R"
 author: "Jenn Schilling"
-date: "2/26/2021"
+date: "3/2/2021"
 output: html_document
 ---
 
@@ -19,7 +19,7 @@ library(tidyverse)
 ```
 
 
-Get directory information and select a group of institutions we're interested in.
+Get IPEDS directory information and select a group of institutions.
 
 ```{r get-inst-ids}
 
@@ -73,7 +73,7 @@ inst_list <- directory %>%
 ```
 
 
-Get the IPEDS Admissions data for our institutions of interest.
+Get the IPEDS Admissions data for institutions of interest for survey years 2017 - 2019.
 
 ```{r get-adm-data}
 
@@ -108,7 +108,7 @@ inst_adm <- inst_adm %>%
 ```
 
 
-Get the IPEDS Enrollment data for our institutions of interest.
+Get the IPEDS Enrollment data for institutions of interest for survey years 2017 - 2019.
 
 ```{r get-enrlmnt-data}
 
@@ -147,7 +147,7 @@ inst_enrlmnt <- inst_enrlmnt %>%
 ```
 
 
-Get the IPEDS Completions data for our institutions of interest.
+Get the IPEDS Completions data for institutions of interest for survey years 2017 - 2019.
 
 ```{r get-compl-data}
 
@@ -184,6 +184,9 @@ inst_compl <- inst_compl %>%
 ```
 
 
+```{r}
+
+```
 
 
 
