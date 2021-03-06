@@ -11,7 +11,7 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE, message = FALSE) 
 
 # Set the default size of figures
-knitr::opts_chunk$set(fig.width = 8, fig.height = 5)  
+# knitr::opts_chunk$set(fig.width = 8, fig.height = 5)  
 
 library(here)
 library(tidyverse)
@@ -244,7 +244,7 @@ ggplot(data = inst_adm_plot,
                      y = n_sat,
                      group = unitid)) +
   geom_line() +
-  geom_text(mapping = aes(label = instnm))
+  geom_text(mapping = aes(label = instnm)) # Add Text Labels
 
 
 # We can see it's Penn State, but the labels are kind of a mess
@@ -253,6 +253,7 @@ ggplot(data = inst_adm_plot,
                      y = n_sat,
                      group = unitid)) +
   geom_line() +
+  # Filter to only the last year for the text labels
   geom_text(data = inst_adm_plot %>% filter(year == 2019),
             mapping = aes(x = year,
                           y = n_sat,
@@ -264,16 +265,14 @@ ggplot(data = inst_adm_plot,
                      y = n_sat,
                      group = unitid)) +
   geom_line() +
-  directlabels::geom_dl(data = inst_adm_plot %>% filter(year == 2019),
-             mapping = aes(x = year,
-                           y = n_sat,
-                          label = instnm)) +
-  # geom_text(data = inst_adm_plot %>% filter(year == 2019),
-  #           mapping = aes(x = year,
-  #                         y = n_sat,
-  #                         label = instnm),
-  #           nudge_x = 0.5) +
-  coord_cartesian(clip = "off")
+  # Change the x mapping for the text labels and add some format adjustments 
+  geom_text(data = inst_adm_plot %>% filter(year == 2019),
+            mapping = aes(x = Inf,
+                          y = n_sat,
+                          label = instnm),
+            hjust = -.01) +
+  coord_cartesian(clip = "off") +
+  theme(plot.margin = margin(0, 250, 0, 0))
 
 
 ```
