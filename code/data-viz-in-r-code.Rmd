@@ -102,7 +102,8 @@ inst_adm <- inst_adm %>%
            test_req == 5 ~ "Considered by not required",
            test_req == 2 ~ "Recommended",
            TRUE ~ "Other"
-         )) %>%
+         ),
+         year = as.integer(year)) %>%
   select(year, unitid, n_applicants, n_admits, n_enrl, test_req, n_sat, pct_sat, sat_score, n_act, pct_act, act_score)
 
 ```
@@ -142,7 +143,8 @@ inst_enrlmnt <- inst_enrlmnt %>%
     gender == "n_enrl" ~ "Total",
     gender == "n_enrl_m" ~ "Men",
     gender == "n_enrl_w" ~ "Women"
-  ))
+  ),
+  year = as.integer(year))
 
 ```
 
@@ -179,7 +181,8 @@ inst_compl <- inst_compl %>%
     gender == "n_deg" ~ "Total",
     gender == "n_deg_m" ~ "Men",
     gender == "n_deg_w" ~ "Women"
-  ))
+  ),
+  year = as.integer(year))
 
 ```
 
@@ -273,6 +276,269 @@ ggplot(data = inst_adm_plot,
             hjust = -.01) +
   coord_cartesian(clip = "off") +
   theme(plot.margin = margin(0, 250, 0, 0))
+
+
+```
+```{r bar-plot}
+
+# How many institutions of each type?
+ggplot(data = inst_list,
+       mapping = aes(x = locale)) +
+  geom_bar()
+
+# Can we sort them?
+# Yes, by using the fct_infreq() function from the forcats package in tidyverse
+# fct_infreq() reorders the levels by their frequencies
+ggplot(data = inst_list,
+       mapping = aes(x = fct_infreq(locale))) +
+  geom_bar()
+
+# What if we want to make a bar plot with something other than counts?
+
+inst_enrlmnt_plot <- left_join(inst_list, inst_enrlmnt, by = "unitid")
+
+# What does enrollment look like by urban area?
+
+# This will give total enrollment in each urban area
+ggplot(data = inst_enrlmnt_plot %>% 
+         filter(lstudy == "All students", gender == "Total", year == 2019),
+       mapping = aes(x = locale,
+                     y = n_enrl)) +
+  geom_col()
+
+# See - the enrollments for each institution are stacked on top of one another
+ggplot(data = inst_enrlmnt_plot %>% 
+         filter(lstudy == "All students", gender == "Total", year == 2019),
+       mapping = aes(x = locale,
+                     y = n_enrl,
+                     fill = instnm)) +
+  geom_col()
+
+# What if we want the average enrollment in each area? 
+inst_enrlmnt_plot_sub <- inst_enrlmnt_plot %>%
+  filter(lstudy == "All students", gender == "Total", year == 2019) %>%
+  group_by(locale) %>%
+  summarize(avg_enrl = mean(n_enrl),
+            .groups = "drop")
+
+ggplot(data = inst_enrlmnt_plot_sub,
+       mapping = aes(x = locale,
+                     y = avg_enrl)) +
+  geom_col()
+
+# Sort by average enrollment
+# This time, use the reorder() function to arrange the locale column by the avg_enrl column
+ggplot(data = inst_enrlmnt_plot_sub,
+       mapping = aes(x = reorder(locale, -avg_enrl),
+                     y = avg_enrl)) +
+  geom_col()
+
+# What if we want to see the enrollment by institution and urban area?
+ggplot(data = inst_enrlmnt_plot %>% 
+         filter(lstudy == "All students", gender == "Total", year == 2019),
+       mapping = aes(x = n_enrl,
+                     y = reorder(instnm, n_enrl))) +
+  geom_col() +
+  facet_wrap(~ locale,
+             scales = "free_y",
+             ncol = 1)
+
+```
+
+```{r fill-color}
+
+# How has average enrollment changed by urban area over time?
+inst_enrlmnt_plot_sub <- inst_enrlmnt_plot %>%
+  filter(lstudy == "All students", gender == "Total") %>%
+  group_by(year, locale) %>%
+  summarize(avg_enrl = mean(n_enrl),
+            .groups = "drop")
+
+ggplot(data = inst_enrlmnt_plot_sub,
+       mapping = aes(x = year,
+                     y = avg_enrl,
+                     fill = locale)) +
+  geom_col() 
+
+
+# Remove the stacking
+ggplot(data = inst_enrlmnt_plot_sub,
+       mapping = aes(x = year,
+                     y = avg_enrl,
+                     fill = locale)) +
+  geom_col(position = "dodge") 
+
+# Make a different plot for each urban area
+ggplot(data = inst_enrlmnt_plot_sub,
+       mapping = aes(x = year,
+                     y = avg_enrl,
+                     fill = locale)) +
+  geom_col(position = "dodge") +
+  facet_wrap(~ locale) +
+  guides(fill = FALSE) # remove the legend
+
+# Maybe it would be better to show this with lines?
+ggplot(data = inst_enrlmnt_plot_sub,
+       mapping = aes(x = year,
+                     y = avg_enrl,
+                     fill = locale)) +
+  geom_line() +
+  facet_wrap(~ locale) +
+  guides(fill = FALSE) 
+
+# What happened to the color?
+# Bars, histograms, and boxplots use fill; lines and points use color
+ggplot(data = inst_enrlmnt_plot_sub,
+       mapping = aes(x = year,
+                     y = avg_enrl,
+                     color = locale)) +
+  geom_line() +
+  facet_wrap(~ locale) +
+  guides(color = FALSE) 
+
+```
+
+
+```{r formatting-1}
+
+inst_compl_plot <- left_join(inst_list, inst_compl, by = "unitid") %>%
+  mutate(city_sub = str_extract(locale, ".+?(?=:)"))
+
+ggplot(data = inst_compl_plot %>% 
+         filter(gender == "Total", year == 2019),
+       mapping = aes(x = n_deg,
+                     y = instnm,
+                     fill = city_sub)) +
+  geom_col() +
+  facet_wrap(~ awlevelc)
+
+# Reorder degree levels
+ggplot(data = inst_compl_plot %>% 
+         filter(gender == "Total", year == 2019),
+       mapping = aes(x = n_deg,
+                     y = instnm,
+                     fill = city_sub)) +
+  geom_col() +
+  facet_wrap(~ factor(awlevelc,
+                      levels = c("Bachelor's degree",
+                                 "Master's degree",
+                                 "Doctor's degree")))
+
+# Reorder institutions by city/suburb 
+ggplot(data = inst_compl_plot %>% 
+         filter(gender == "Total", year == 2019),
+       mapping = aes(x = n_deg,
+                     y = fct_reorder(instnm, city_sub),
+                     fill = city_sub)) +
+  geom_col() +
+  facet_wrap(~ factor(awlevelc,
+                      levels = c("Bachelor's degree",
+                                 "Master's degree",
+                                 "Doctor's degree")))
+
+# Add titles and labels
+ggplot(data = inst_compl_plot %>% 
+         filter(gender == "Total", year == 2019),
+       mapping = aes(x = n_deg,
+                     y = fct_reorder(instnm, city_sub),
+                     fill = city_sub)) +
+  geom_col() +
+  facet_wrap(~ factor(awlevelc,
+                      levels = c("Bachelor's degree",
+                                 "Master's degree",
+                                 "Doctor's degree"))) +
+  labs(title = "Number of Degrees Awarded by Institution",
+       subtitle = "Academic Year 2018-2019",
+       x = "",
+       y = "")
+
+# Move legend to the bottom and remove legend title
+ggplot(data = inst_compl_plot %>% 
+         filter(gender == "Total", year == 2019),
+       mapping = aes(x = n_deg,
+                     y = fct_reorder(instnm, city_sub),
+                     fill = city_sub)) +
+  geom_col() +
+  facet_wrap(~ factor(awlevelc,
+                      levels = c("Bachelor's degree",
+                                 "Master's degree",
+                                 "Doctor's degree"))) +
+  labs(title = "Number of Degrees Awarded by Institution",
+       subtitle = "Academic Year 2018-2019",
+       x = "",
+       y = "",
+       fill = "") +
+  theme(legend.position = "bottom")
+
+# Add note about data source
+ggplot(data = inst_compl_plot %>% 
+         filter(gender == "Total", year == 2019),
+       mapping = aes(x = n_deg,
+                     y = fct_reorder(instnm, city_sub),
+                     fill = city_sub)) +
+  geom_col() +
+  facet_wrap(~ factor(awlevelc,
+                      levels = c("Bachelor's degree",
+                                 "Master's degree",
+                                 "Doctor's degree"))) +
+  labs(title = "Number of Degrees Awarded by Institution",
+       subtitle = "Academic Year 2018-2019",
+       caption = "Data from IPEDS",
+       x = "",
+       y = "",
+       fill = "") +
+  theme(legend.position = "bottom")
+
+
+
+```
+
+```{r formatting-2}
+
+
+# Change the plot theme from the default
+ggplot(data = inst_compl_plot %>% 
+         filter(gender == "Total", year == 2019),
+       mapping = aes(x = n_deg,
+                     y = fct_reorder(instnm, city_sub),
+                     fill = city_sub)) +
+  geom_col() +
+  facet_wrap(~ factor(awlevelc,
+                      levels = c("Bachelor's degree",
+                                 "Master's degree",
+                                 "Doctor's degree"))) +
+  labs(title = "Number of Degrees Awarded by Institution",
+       subtitle = "Academic Year 2018-2019",
+       caption = "Data from IPEDS",
+       x = "",
+       y = "",
+       fill = "") +
+  theme_minimal() +
+  theme(legend.position = "bottom") 
+
+# Add commas to the x-axis labels
+ggplot(data = inst_compl_plot %>% 
+         filter(gender == "Total", year == 2019),
+       mapping = aes(x = n_deg,
+                     y = fct_reorder(instnm, city_sub),
+                     fill = city_sub)) +
+  geom_col() +
+  facet_wrap(~ factor(awlevelc,
+                      levels = c("Bachelor's degree",
+                                 "Master's degree",
+                                 "Doctor's degree"))) +
+  scale_x_continuous(labels = scales::comma) +
+  labs(title = "Number of Degrees Awarded by Institution",
+       subtitle = "Academic Year 2018-2019",
+       caption = "Data from IPEDS",
+       x = "",
+       y = "",
+       fill = "") +
+  theme_minimal() +
+  theme(legend.position = "bottom") 
+
+
+
 
 
 ```
