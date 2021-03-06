@@ -538,6 +538,50 @@ ggplot(data = inst_compl_plot %>%
   theme(legend.position = "bottom") 
 
 
+# Change the bar fill colors (using ColorBrewer)
+ggplot(data = inst_compl_plot %>% 
+         filter(gender == "Total", year == 2019),
+       mapping = aes(x = n_deg,
+                     y = fct_reorder(instnm, city_sub),
+                     fill = city_sub)) +
+  geom_col() +
+  facet_wrap(~ factor(awlevelc,
+                      levels = c("Bachelor's degree",
+                                 "Master's degree",
+                                 "Doctor's degree"))) +
+  scale_x_continuous(labels = scales::comma) +
+  scale_fill_brewer(palette = "Dark2") +
+  labs(title = "Number of Degrees Awarded by Institution",
+       subtitle = "Academic Year 2018-2019",
+       caption = "Data from IPEDS",
+       x = "",
+       y = "",
+       fill = "") +
+  theme_minimal() +
+  theme(legend.position = "bottom") 
+
+# Change the bar fill colors manually
+ggplot(data = inst_compl_plot %>% 
+         filter(gender == "Total", year == 2019),
+       mapping = aes(x = n_deg,
+                     y = fct_reorder(instnm, city_sub),
+                     fill = city_sub)) +
+  geom_col() +
+  facet_wrap(~ factor(awlevelc,
+                      levels = c("Bachelor's degree",
+                                 "Master's degree",
+                                 "Doctor's degree"))) +
+  scale_x_continuous(labels = scales::comma) +
+  scale_fill_manual(values = c("#00A4CCFF", "#F95700FF")) +
+  labs(title = "Number of Degrees Awarded by Institution",
+       subtitle = "Academic Year 2018-2019",
+       caption = "Data from IPEDS",
+       x = "",
+       y = "",
+       fill = "") +
+  theme_minimal() +
+  theme(legend.position = "bottom") 
+
 
 
 
