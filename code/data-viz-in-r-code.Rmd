@@ -187,24 +187,7 @@ inst_compl <- inst_compl %>%
 ```
 
 
-**Session 1**
-Why is data visualization important? (5 minutes)
-Best practices in data visualization (5 minutes)
-Data visualization in R (examples of R data visualizations, concept of the grammar of graphics) (5 minutes)
-R set-up (Rmarkdown, packages needed, importing data) (10 minutes)
-How to make a scatterplot in R (guided exercise) (10 minutes)
-How to make a line graph in R (guided exercise) (10 minutes)
-Questions (15 minutes)
-
-**Session 2**
-Recap of previous session (grammar of graphics, R set-up, making a plot) (5 minutes)
-How to make a bar graph in R (guided exercise) (10 minutes)
-Adding and changing titles and labels in R (10 minutes)
-Formatting options for plots (including how to make small multiples in R) (10 minutes)
-How to save a plot in R (5 minutes)
-Where to go from here (5 minutes)
-Questions (15 minutes)
-
+Make a scatter plot 
 
 ```{r scatter-plot}
 
