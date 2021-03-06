@@ -586,4 +586,226 @@ ggplot(data = inst_compl_plot %>%
 
 
 ```
+```{r alternate-formatting-1}
+
+inst_compl_plot <- left_join(inst_list, inst_compl, by = "unitid") 
+
+ggplot(data = inst_compl_plot %>% 
+         filter(gender == "Total", unitid == 104179),
+       mapping = aes(x = year,
+                     y = n_deg,
+                     color = awlevelc)) +
+  geom_line()
+
+# Reorder degree levels
+ggplot(data = inst_compl_plot %>% 
+         filter(gender == "Total", unitid == 104179),
+       mapping = aes(x = year,
+                     y = n_deg,
+                     color = factor(awlevelc,
+                      levels = c("Bachelor's degree",
+                                 "Master's degree",
+                                 "Doctor's degree")))) +
+  geom_line()
+
+# Add titles and labels
+ggplot(data = inst_compl_plot %>% 
+         filter(gender == "Total", unitid == 104179),
+       mapping = aes(x = year,
+                     y = n_deg,
+                     color = factor(awlevelc,
+                      levels = c("Bachelor's degree",
+                                 "Master's degree",
+                                 "Doctor's degree")))) +
+  geom_line() +
+  labs(title = "Number of Degrees Awarded by the University of Arizona by Academic Year",
+       x = "Academic Year",
+       y = "")
+
+# Move legend to the top and remove legend title
+ggplot(data = inst_compl_plot %>% 
+         filter(gender == "Total", unitid == 104179),
+       mapping = aes(x = year,
+                     y = n_deg,
+                     color = factor(awlevelc,
+                      levels = c("Bachelor's degree",
+                                 "Master's degree",
+                                 "Doctor's degree")))) +
+  geom_line() +
+  labs(title = "Number of Degrees Awarded by the University of Arizona by Academic Year",
+       x = "Academic Year",
+       y = "",
+       color = "") +
+  theme(legend.position = "top")
+
+# Add note about data source
+ggplot(data = inst_compl_plot %>% 
+         filter(gender == "Total", unitid == 104179),
+       mapping = aes(x = year,
+                     y = n_deg,
+                     color = factor(awlevelc,
+                      levels = c("Bachelor's degree",
+                                 "Master's degree",
+                                 "Doctor's degree")))) +
+  geom_line() +
+  labs(title = "Number of Degrees Awarded by the University of Arizona by Academic Year",
+       x = "Academic Year",
+       y = "",
+       color = "",
+       caption = "Data from IPEDS Completions Survey") +
+  theme(legend.position = "top")
+
+
+# Add Theme
+ggplot(data = inst_compl_plot %>% 
+         filter(gender == "Total", unitid == 104179),
+       mapping = aes(x = year,
+                     y = n_deg,
+                     color = factor(awlevelc,
+                      levels = c("Bachelor's degree",
+                                 "Master's degree",
+                                 "Doctor's degree")))) +
+  geom_line() +
+  labs(title = "Number of Degrees Awarded by the University of Arizona by Academic Year",
+       x = "Academic Year",
+       y = "",
+       color = "",
+       caption = "Data from IPEDS Completions Survey") +
+  theme_minimal() +
+  theme(legend.position = "top")
+
+
+# Add commas to y-axis labels
+ggplot(data = inst_compl_plot %>% 
+         filter(gender == "Total", unitid == 104179),
+       mapping = aes(x = year,
+                     y = n_deg,
+                     color = factor(awlevelc,
+                      levels = c("Bachelor's degree",
+                                 "Master's degree",
+                                 "Doctor's degree")))) +
+  geom_line() +
+  scale_y_continuous(labels = scales::comma) +
+  labs(title = "Number of Degrees Awarded by the University of Arizona by Academic Year",
+       x = "Academic Year",
+       y = "",
+       color = "",
+       caption = "Data from IPEDS Completions Survey") +
+  theme_minimal() +
+  theme(legend.position = "top")
+
+# Remove decimals from x-axis labels and make them academic year ranges
+ggplot(data = inst_compl_plot %>% 
+         filter(gender == "Total", unitid == 104179),
+       mapping = aes(x = year,
+                     y = n_deg,
+                     color = factor(awlevelc,
+                      levels = c("Bachelor's degree",
+                                 "Master's degree",
+                                 "Doctor's degree")))) +
+  geom_line() +
+  scale_y_continuous(labels = scales::comma) +
+  scale_x_continuous(breaks = c(2017, 2018, 2019)) +
+  labs(title = "Number of Degrees Awarded by the University of Arizona by Academic Year",
+       x = "Academic Year",
+       y = "",
+       color = "",
+       caption = "Data from IPEDS Completions Survey") +
+  theme_minimal() +
+  theme(legend.position = "top")
+
+ggplot(data = inst_compl_plot %>% 
+         filter(gender == "Total", unitid == 104179),
+       mapping = aes(x = year,
+                     y = n_deg,
+                     color = factor(awlevelc,
+                      levels = c("Bachelor's degree",
+                                 "Master's degree",
+                                 "Doctor's degree")))) +
+  geom_line() +
+  scale_y_continuous(labels = scales::comma) +
+  scale_x_continuous(breaks = c(2017, 2018, 2019),
+                     labels = c("2016-17", "2017-18", "2018-18")) +
+  labs(title = "Number of Degrees Awarded by the University of Arizona by Academic Year",
+       x = "Academic Year",
+       y = "",
+       color = "",
+       caption = "Data from IPEDS Completions Survey") +
+  theme_minimal() +
+  theme(legend.position = "top")
+
+
+# Add points on top of the lines and remove line legend
+ggplot(data = inst_compl_plot %>% 
+         filter(gender == "Total", unitid == 104179),
+       mapping = aes(x = year,
+                     y = n_deg,
+                     color = factor(awlevelc,
+                      levels = c("Bachelor's degree",
+                                 "Master's degree",
+                                 "Doctor's degree")))) +
+  geom_line(show.legend = FALSE) +
+  geom_point() +
+  scale_y_continuous(labels = scales::comma) +
+  scale_x_continuous(breaks = c(2017, 2018, 2019),
+                     labels = c("2016-17", "2017-18", "2018-18")) +
+  labs(title = "Number of Degrees Awarded by the University of Arizona by Academic Year",
+       x = "Academic Year",
+       y = "",
+       color = "",
+       caption = "Data from IPEDS Completions Survey") +
+  theme_minimal() +
+  theme(legend.position = "top")
+
+# Change color using ColorBrewer
+ggplot(data = inst_compl_plot %>% 
+         filter(gender == "Total", unitid == 104179),
+       mapping = aes(x = year,
+                     y = n_deg,
+                     color = factor(awlevelc,
+                      levels = c("Bachelor's degree",
+                                 "Master's degree",
+                                 "Doctor's degree")))) +
+  geom_line(show.legend = FALSE) +
+  geom_point() +
+  scale_y_continuous(labels = scales::comma) +
+  scale_x_continuous(breaks = c(2017, 2018, 2019),
+                     labels = c("2016-17", "2017-18", "2018-18")) +
+  scale_color_brewer(palette = "Dark2") +
+  labs(title = "Number of Degrees Awarded by the University of Arizona by Academic Year",
+       x = "Academic Year",
+       y = "",
+       color = "",
+       caption = "Data from IPEDS Completions Survey") +
+  theme_minimal() +
+  theme(legend.position = "top")
+
+# Change color using manual colors
+ggplot(data = inst_compl_plot %>% 
+         filter(gender == "Total", unitid == 104179),
+       mapping = aes(x = year,
+                     y = n_deg,
+                     color = factor(awlevelc,
+                      levels = c("Bachelor's degree",
+                                 "Master's degree",
+                                 "Doctor's degree")))) +
+  geom_line(show.legend = FALSE) +
+  geom_point() +
+  scale_y_continuous(labels = scales::comma) +
+  scale_x_continuous(breaks = c(2017, 2018, 2019),
+                     labels = c("2016-17", "2017-18", "2018-18")) +
+  scale_color_manual(values = c("#0C234B", "#AB0520", "#378DBD")) +
+  labs(title = "Number of Degrees Awarded by the University of Arizona by Academic Year",
+       x = "Academic Year",
+       y = "",
+       color = "",
+       caption = "Data from IPEDS Completions Survey") +
+  theme_minimal() +
+  theme(legend.position = "top")
+
+
+
+
+
+```
 
