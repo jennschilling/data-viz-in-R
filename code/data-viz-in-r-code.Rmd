@@ -1,7 +1,7 @@
 ---
 title: "Data Visualization in R"
 author: "Jenn Schilling"
-date: "3/2/2021"
+date: "3/6/2021"
 output: html_document
 ---
 
