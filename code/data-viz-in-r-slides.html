@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Data Visualization in R</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Jenn Schilling" />
+    <script src="data-viz-in-r-slides_files/header-attrs/header-attrs.js"></script>
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Data Visualization in R
+### Jenn Schilling
+### April 12 &amp; 13, 2021
+
+---
+
+
+
+
+
+
+&lt;style type="text/css"&gt;
+
+.remark-code{line-height: 1.5; font-size: 90%} # smaller code font size
+
+&lt;/style&gt;
+
+
+
+
+
+# Plotting in R - Tidy Data
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; instnm &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; sat_score &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; act_score &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; University of California-Davis &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1290 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 40.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; University of California-Los Angeles &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1415 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 46.5 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; University of Iowa &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1235 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 36.5 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; University of Florida &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1390 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 44.5 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; University of Wisconsin-Madison &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1390 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 43.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Texas A &amp;amp; M University-College Station &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1275 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 41.5 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Ohio State University-Main Campus &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1355 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 44.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Michigan State University &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1210 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 37.5 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; University of North Carolina at Chapel Hill &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1405 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 44.5 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; The University of Texas at Austin &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1355 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 43.5 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+
+# Plotting in R - Data
+
+.pull-left[
+
+
+
+&lt;code class ='r hljs remark-code'&gt;ggplot(&lt;span style='background-color:#ffff7f'&gt;data = inst_adm_plot&lt;/span&gt;, &lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;mapping = aes(x = sat_score,&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;y = act_score)) +&lt;br&gt;&amp;nbsp;&amp;nbsp;geom_point()&lt;/code&gt;
+]
+
+---
+
+# Plotting in R - Aesthetic Mappings
+
+.pull-left[
+
+&lt;code class ='r hljs remark-code'&gt;ggplot(data = inst_adm_plot, &lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span style='background-color:#ffff7f'&gt;mapping = aes(x = sat_score,&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;y = act_score)&lt;/span&gt;) +&lt;br&gt;&amp;nbsp;&amp;nbsp;geom_point()&lt;/code&gt;
+]
+
+---
+
+# Plotting in R - Geometric Objects 
+
+.pull-left[
+
+&lt;code class ='r hljs remark-code'&gt;ggplot(data = inst_adm_plot, &lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;mapping = aes(x = sat_score,&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;y = act_score)) +&lt;br&gt;&amp;nbsp;&amp;nbsp;&lt;span style='background-color:#ffff7f'&gt;geom_point()&lt;/span&gt;&lt;/code&gt;
+]
+
+---
+
+count: false
+ 
+#Plotting in R
+.panel1-plot-1-auto[
+
+```r
+*ggplot(data = inst_adm_plot,
+*      mapping = aes(x = sat_score,
+*                    y = act_score))
+```
+]
+ 
+.panel2-plot-1-auto[
+&lt;img src="data-viz-in-r-slides_files/figure-html/plot-1_auto_01_output-1.png" width="504" /&gt;
+]
+
+---
+count: false
+ 
+#Plotting in R
+.panel1-plot-1-auto[
+
+```r
+ggplot(data = inst_adm_plot,
+       mapping = aes(x = sat_score,
+                     y = act_score)) +
+* geom_point()
+```
+]
+ 
+.panel2-plot-1-auto[
+&lt;img src="data-viz-in-r-slides_files/figure-html/plot-1_auto_02_output-1.png" width="504" /&gt;
+]
+
+---
+count: false
+ 
+#Plotting in R
+.panel1-plot-1-auto[
+
+```r
+ggplot(data = inst_adm_plot,
+       mapping = aes(x = sat_score,
+                     y = act_score)) +
+  geom_point()
+```
+]
+ 
+.panel2-plot-1-auto[
+&lt;img src="data-viz-in-r-slides_files/figure-html/plot-1_auto_03_output-1.png" width="504" /&gt;
+]
+
+&lt;style&gt;
+.panel1-plot-1-auto {
+  color: black;
+  width: 49%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel2-plot-1-auto {
+  color: black;
+  width: 49%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel3-plot-1-auto {
+  color: black;
+  width: NA%;
+  hight: 33%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+&lt;/style&gt;
+
+
+
+---
+
+# Plotting in R - New Tidy Data
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:right;"&gt; year &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; instnm &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; sat_score &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; n_sat &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 2017 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Pennsylvania State University-Main Campus &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1250 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 5098 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 2017 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; The University of Texas at Austin &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1340 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 6160 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 2017 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; University of Iowa &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1255 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 438 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 2018 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Pennsylvania State University-Main Campus &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1260 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 5995 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 2018 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; The University of Texas at Austin &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1355 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 7013 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 2018 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; University of Iowa &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1225 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1253 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 2019 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Pennsylvania State University-Main Campus &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1190 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 12350 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 2019 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; The University of Texas at Austin &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1355 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 6416 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 2019 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; University of Iowa &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1235 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1440 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+
+# Plotting in R - New Geometric Object
+
+.pull-left[
+
+
+
+&lt;code class ='r hljs remark-code'&gt;ggplot(data = inst_adm_plot,&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;mapping = aes(x = year,&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;y = sat_score)) +&lt;br&gt;&amp;nbsp;&amp;nbsp;&lt;span style='background-color:#ffff7f'&gt;geom_line()&lt;/span&gt;&lt;/code&gt;
+]
+
+.pull-right[
+&lt;img src="data-viz-in-r-slides_files/figure-html/output-plot-2-1.png" width="504" /&gt;
+]
+
+---
+
+# Plotting in R - The `group` Argument
+
+.pull-left[
+
+
+
+&lt;code class ='r hljs remark-code'&gt;ggplot(data = inst_adm_plot,&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;mapping = aes(x = year,&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;y = sat_score,&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span style='background-color:#ffff7f'&gt;group = instnm&lt;/span&gt;)) +&lt;br&gt;&amp;nbsp;&amp;nbsp;geom_line()&lt;/code&gt;
+]
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"ratio": "16:9",
+"img_dir": "img",
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

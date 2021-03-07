@@ -270,21 +270,21 @@ ggplot(data = inst_adm_plot,
 ggplot(data = inst_adm_plot,
        mapping = aes(x = year,
                      y = sat_score,
-                     group = unitid)) +
+                     group = instnm)) +
   geom_line()
 
 # What about number who submitted by year?
 ggplot(data = inst_adm_plot,
        mapping = aes(x = year,
                      y = n_sat,
-                     group = unitid)) +
+                     group = instnm)) +
   geom_line()
 
 # Who's that outlier in 2019?
 ggplot(data = inst_adm_plot,
        mapping = aes(x = year,
                      y = n_sat,
-                     group = unitid)) +
+                     group = instnm)) +
   geom_line() +
   geom_text(mapping = aes(label = instnm)) # Add Text Labels
 
@@ -293,7 +293,7 @@ ggplot(data = inst_adm_plot,
 ggplot(data = inst_adm_plot,
        mapping = aes(x = year,
                      y = n_sat,
-                     group = unitid)) +
+                     group = instnm)) +
   geom_line() +
   # Filter to only the last year for the text labels
   geom_text(data = inst_adm_plot %>% filter(year == 2019),
@@ -305,7 +305,7 @@ ggplot(data = inst_adm_plot,
 ggplot(data = inst_adm_plot,
        mapping = aes(x = year,
                      y = n_sat,
-                     group = unitid)) +
+                     group = instnm)) +
   geom_line() +
   # Change the x mapping for the text labels and add some format adjustments 
   geom_text(data = inst_adm_plot %>% filter(year == 2019),
