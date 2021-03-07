@@ -23,6 +23,27 @@ library(tidyverse)
 ```
 
 
+This file contains the data and code for webinar: [Data Visualization in R](https://www.airweb.org/collaborate-learn/calendar/2021/04/12/event/data-visualization-in-r), presented for the Association for Institutional Research, April 12 & 13 2021.  
+
+
+
+**Webinar Details**  
+This two-part webinar series will introduce individuals with a basic understanding of R and data manipulation in R to data visualization in R. Through guided exercises and presentations, participants will learn how to build and polish data visualizations using the grammar of graphics in R. The series will also include tips on data visualization best practices, creating reproducible code, and outputting data visualizations in R. This series is ideal for higher education professionals who have some experience in R and want to add data visualization to their R skills.  
+
+As a result of this webinar, participants will be able to: 
+
+- Explain how the grammar of graphics works in R. 
+- Create three different plots in R. 
+- Add titles and labels to a plot in R. 
+- Change the formatting of a plot in R. 
+
+
+**Materials developed by Jenn Schilling.**  
+
+This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">
+Creative Commons Attribution-NonCommercial 4.0 International License</a>.
+
+
 # Data Prepartion
 
 ## Directory Information from IPEDS
@@ -76,7 +97,8 @@ inst_list <- directory %>%
            c18szset == 17 ~ "Four-year, large, highly residential",
            TRUE ~ "Other")
          ) %>%
-  select(unitid, instnm, city, stabbr, control, hdegrofr1, hospital, medical, locale, instsize, landgrnt, c18basic, c18enprf, c18szset)
+  select(unitid, instnm, city, stabbr, control, hdegrofr1, hospital, medical, 
+         locale, instsize, landgrnt, c18basic, c18enprf, c18szset)
 
 ```
 
@@ -87,9 +109,12 @@ Get the IPEDS Admissions data for institutions of interest for survey years 2017
 
 ```{r get-adm-data}
 
-adm_17 <- read_csv(here('data', 'ipeds_2017', 'adm2017_rv.csv')) %>% janitor::clean_names() %>% mutate(year = 2017)
-adm_18 <- read_csv(here('data', 'ipeds_2018', 'adm2018_rv.csv')) %>% janitor::clean_names() %>% mutate(year = 2018)
-adm_19 <- read_csv(here('data', 'ipeds_2019', 'adm2019.csv')) %>% janitor::clean_names() %>% mutate(year = 2019)
+adm_17 <- read_csv(here('data', 'ipeds_2017', 'adm2017_rv.csv')) %>% 
+  janitor::clean_names() %>% mutate(year = 2017)
+adm_18 <- read_csv(here('data', 'ipeds_2018', 'adm2018_rv.csv')) %>% 
+  janitor::clean_names() %>% mutate(year = 2018)
+adm_19 <- read_csv(here('data', 'ipeds_2019', 'adm2019.csv')) %>% 
+  janitor::clean_names() %>% mutate(year = 2019)
 
 adm <- rbind(adm_17, adm_18, adm_19)
 
@@ -114,7 +139,8 @@ inst_adm <- inst_adm %>%
            TRUE ~ "Other"
          ),
          year = as.integer(year)) %>%
-  select(year, unitid, n_applicants, n_admits, n_enrl, test_req, n_sat, pct_sat, sat_score, n_act, pct_act, act_score)
+  select(year, unitid, n_applicants, n_admits, n_enrl, test_req, n_sat, 
+         pct_sat, sat_score, n_act, pct_act, act_score)
 
 ```
 
@@ -125,9 +151,12 @@ Get the IPEDS Enrollment data for institutions of interest for survey years 2017
 
 ```{r get-enrlmnt-data}
 
-enrlmnt_17 <- read_csv(here('data', 'ipeds_2017', 'ef2017a_rv.csv')) %>% janitor::clean_names() %>% mutate(year = 2017)
-enrlmnt_18 <- read_csv(here('data', 'ipeds_2018', 'ef2018a_rv.csv')) %>% janitor::clean_names() %>% mutate(year = 2018)
-enrlmnt_19 <- read_csv(here('data', 'ipeds_2019', 'ef2019a.csv')) %>% janitor::clean_names() %>% mutate(year = 2019)
+enrlmnt_17 <- read_csv(here('data', 'ipeds_2017', 'ef2017a_rv.csv')) %>% 
+  janitor::clean_names() %>% mutate(year = 2017)
+enrlmnt_18 <- read_csv(here('data', 'ipeds_2018', 'ef2018a_rv.csv')) %>% 
+  janitor::clean_names() %>% mutate(year = 2018)
+enrlmnt_19 <- read_csv(here('data', 'ipeds_2019', 'ef2019a.csv')) %>% 
+  janitor::clean_names() %>% mutate(year = 2019)
 
 enrlmnt <- rbind(enrlmnt_17, enrlmnt_18, enrlmnt_19)
 
@@ -167,9 +196,12 @@ Get the IPEDS Completions data for institutions of interest for survey years 201
 
 ```{r get-compl-data}
 
-compl_17 <- read_csv(here('data', 'ipeds_2017', 'c2017_c_rv.csv')) %>% janitor::clean_names() %>% mutate(year = 2017)
-compl_18 <- read_csv(here('data', 'ipeds_2018', 'c2018_c_rv.csv')) %>% janitor::clean_names() %>% mutate(year = 2018)
-compl_19 <- read_csv(here('data', 'ipeds_2019', 'c2019_c.csv')) %>% janitor::clean_names() %>% mutate(year = 2019)
+compl_17 <- read_csv(here('data', 'ipeds_2017', 'c2017_c_rv.csv')) %>% 
+  janitor::clean_names() %>% mutate(year = 2017)
+compl_18 <- read_csv(here('data', 'ipeds_2018', 'c2018_c_rv.csv')) %>% 
+  janitor::clean_names() %>% mutate(year = 2018)
+compl_19 <- read_csv(here('data', 'ipeds_2019', 'c2019_c.csv')) %>% 
+  janitor::clean_names() %>% mutate(year = 2019)
 
 compl <- rbind(compl_17, compl_18, compl_19)
 

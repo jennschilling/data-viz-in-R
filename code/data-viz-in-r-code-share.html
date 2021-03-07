@@ -247,6 +247,18 @@ div.tocify {
 </div>
 
 
+<p>This file contains the data and code for webinar: <a href="https://www.airweb.org/collaborate-learn/calendar/2021/04/12/event/data-visualization-in-r">Data Visualization in R</a>, presented for the Association for Institutional Research, April 12 &amp; 13 2021.</p>
+<p><strong>Webinar Details</strong><br />
+This two-part webinar series will introduce individuals with a basic understanding of R and data manipulation in R to data visualization in R. Through guided exercises and presentations, participants will learn how to build and polish data visualizations using the grammar of graphics in R. The series will also include tips on data visualization best practices, creating reproducible code, and outputting data visualizations in R. This series is ideal for higher education professionals who have some experience in R and want to add data visualization to their R skills.</p>
+<p>As a result of this webinar, participants will be able to:</p>
+<ul>
+<li>Explain how the grammar of graphics works in R.</li>
+<li>Create three different plots in R.</li>
+<li>Add titles and labels to a plot in R.</li>
+<li>Change the formatting of a plot in R.</li>
+</ul>
+<p><strong>Materials developed by Jenn Schilling.</strong></p>
+<p>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"> Creative Commons Attribution-NonCommercial 4.0 International License</a>.</p>
 <div id="data-prepartion" class="section level1">
 <h1>Data Prepartion</h1>
 <div id="directory-information-from-ipeds" class="section level2">
@@ -297,14 +309,18 @@ inst_list &lt;- directory %&gt;%
            c18szset == 17 ~ &quot;Four-year, large, highly residential&quot;,
            TRUE ~ &quot;Other&quot;)
          ) %&gt;%
-  select(unitid, instnm, city, stabbr, control, hdegrofr1, hospital, medical, locale, instsize, landgrnt, c18basic, c18enprf, c18szset)</code></pre>
+  select(unitid, instnm, city, stabbr, control, hdegrofr1, hospital, medical, 
+         locale, instsize, landgrnt, c18basic, c18enprf, c18szset)</code></pre>
 </div>
 <div id="admissions-data-from-ipeds" class="section level2">
 <h2>Admissions Data from IPEDS</h2>
 <p>Get the IPEDS Admissions data for institutions of interest for survey years 2017-2019 and process to create a tidy dataset.</p>
-<pre class="r"><code>adm_17 &lt;- read_csv(here(&#39;data&#39;, &#39;ipeds_2017&#39;, &#39;adm2017_rv.csv&#39;)) %&gt;% janitor::clean_names() %&gt;% mutate(year = 2017)
-adm_18 &lt;- read_csv(here(&#39;data&#39;, &#39;ipeds_2018&#39;, &#39;adm2018_rv.csv&#39;)) %&gt;% janitor::clean_names() %&gt;% mutate(year = 2018)
-adm_19 &lt;- read_csv(here(&#39;data&#39;, &#39;ipeds_2019&#39;, &#39;adm2019.csv&#39;)) %&gt;% janitor::clean_names() %&gt;% mutate(year = 2019)
+<pre class="r"><code>adm_17 &lt;- read_csv(here(&#39;data&#39;, &#39;ipeds_2017&#39;, &#39;adm2017_rv.csv&#39;)) %&gt;% 
+  janitor::clean_names() %&gt;% mutate(year = 2017)
+adm_18 &lt;- read_csv(here(&#39;data&#39;, &#39;ipeds_2018&#39;, &#39;adm2018_rv.csv&#39;)) %&gt;% 
+  janitor::clean_names() %&gt;% mutate(year = 2018)
+adm_19 &lt;- read_csv(here(&#39;data&#39;, &#39;ipeds_2019&#39;, &#39;adm2019.csv&#39;)) %&gt;% 
+  janitor::clean_names() %&gt;% mutate(year = 2019)
 
 adm &lt;- rbind(adm_17, adm_18, adm_19)
 
@@ -329,14 +345,18 @@ inst_adm &lt;- inst_adm %&gt;%
            TRUE ~ &quot;Other&quot;
          ),
          year = as.integer(year)) %&gt;%
-  select(year, unitid, n_applicants, n_admits, n_enrl, test_req, n_sat, pct_sat, sat_score, n_act, pct_act, act_score)</code></pre>
+  select(year, unitid, n_applicants, n_admits, n_enrl, test_req, n_sat, 
+         pct_sat, sat_score, n_act, pct_act, act_score)</code></pre>
 </div>
 <div id="enrollment-data-from-ipeds" class="section level2">
 <h2>Enrollment Data from IPEDS</h2>
 <p>Get the IPEDS Enrollment data for institutions of interest for survey years 2017-2019 and process to create a tidy dataset.</p>
-<pre class="r"><code>enrlmnt_17 &lt;- read_csv(here(&#39;data&#39;, &#39;ipeds_2017&#39;, &#39;ef2017a_rv.csv&#39;)) %&gt;% janitor::clean_names() %&gt;% mutate(year = 2017)
-enrlmnt_18 &lt;- read_csv(here(&#39;data&#39;, &#39;ipeds_2018&#39;, &#39;ef2018a_rv.csv&#39;)) %&gt;% janitor::clean_names() %&gt;% mutate(year = 2018)
-enrlmnt_19 &lt;- read_csv(here(&#39;data&#39;, &#39;ipeds_2019&#39;, &#39;ef2019a.csv&#39;)) %&gt;% janitor::clean_names() %&gt;% mutate(year = 2019)
+<pre class="r"><code>enrlmnt_17 &lt;- read_csv(here(&#39;data&#39;, &#39;ipeds_2017&#39;, &#39;ef2017a_rv.csv&#39;)) %&gt;% 
+  janitor::clean_names() %&gt;% mutate(year = 2017)
+enrlmnt_18 &lt;- read_csv(here(&#39;data&#39;, &#39;ipeds_2018&#39;, &#39;ef2018a_rv.csv&#39;)) %&gt;% 
+  janitor::clean_names() %&gt;% mutate(year = 2018)
+enrlmnt_19 &lt;- read_csv(here(&#39;data&#39;, &#39;ipeds_2019&#39;, &#39;ef2019a.csv&#39;)) %&gt;% 
+  janitor::clean_names() %&gt;% mutate(year = 2019)
 
 enrlmnt &lt;- rbind(enrlmnt_17, enrlmnt_18, enrlmnt_19)
 
@@ -370,9 +390,12 @@ inst_enrlmnt &lt;- inst_enrlmnt %&gt;%
 <div id="completions-data-from-ipeds" class="section level2">
 <h2>Completions Data from IPEDS</h2>
 <p>Get the IPEDS Completions data for institutions of interest for survey years 2017-2019 and process to create a tidy dataset.</p>
-<pre class="r"><code>compl_17 &lt;- read_csv(here(&#39;data&#39;, &#39;ipeds_2017&#39;, &#39;c2017_c_rv.csv&#39;)) %&gt;% janitor::clean_names() %&gt;% mutate(year = 2017)
-compl_18 &lt;- read_csv(here(&#39;data&#39;, &#39;ipeds_2018&#39;, &#39;c2018_c_rv.csv&#39;)) %&gt;% janitor::clean_names() %&gt;% mutate(year = 2018)
-compl_19 &lt;- read_csv(here(&#39;data&#39;, &#39;ipeds_2019&#39;, &#39;c2019_c.csv&#39;)) %&gt;% janitor::clean_names() %&gt;% mutate(year = 2019)
+<pre class="r"><code>compl_17 &lt;- read_csv(here(&#39;data&#39;, &#39;ipeds_2017&#39;, &#39;c2017_c_rv.csv&#39;)) %&gt;% 
+  janitor::clean_names() %&gt;% mutate(year = 2017)
+compl_18 &lt;- read_csv(here(&#39;data&#39;, &#39;ipeds_2018&#39;, &#39;c2018_c_rv.csv&#39;)) %&gt;% 
+  janitor::clean_names() %&gt;% mutate(year = 2018)
+compl_19 &lt;- read_csv(here(&#39;data&#39;, &#39;ipeds_2019&#39;, &#39;c2019_c.csv&#39;)) %&gt;% 
+  janitor::clean_names() %&gt;% mutate(year = 2019)
 
 compl &lt;- rbind(compl_17, compl_18, compl_19)
 
