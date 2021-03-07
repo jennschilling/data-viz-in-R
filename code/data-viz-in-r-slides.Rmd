@@ -1,0 +1,53 @@
+---
+title: "Data Visualization in R"
+author: "Jenn Schilling"
+date: "April 12 & 13, 2021"
+output:
+  xaringan::moon_reader:
+    css: xaringan-themer.css
+    nature:
+      ratio: '16:9'
+      img_dir: img
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+```{r setup, include=FALSE}
+
+options(htmltools.dir.version = FALSE)
+
+options(knitr.duplicate.label = "allow")
+
+knitr::opts_chunk$set(fig.retina = 3, warning = FALSE, message = FALSE)
+
+
+library(here)
+library(tidyverse)
+library(xaringanthemer)
+library(flair)
+library(flipbookr)
+library(DT)
+
+```
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+
+style_duo_accent(
+  primary_color = "#1c5253",
+  secondary_color = "#c8c8c8",
+  link_color = choose_dark_or_light("#FFFFFF", "#cf7270"),
+  header_font_google = google_font("Josefin Sans"),
+  text_font_google   = google_font("Montserrat", "300", "300i"),
+  code_font_google   = google_font("Fira Mono"),
+  inverse_background_color = "#1c5253",
+  inverse_header_color = "#FFFFFF"
+)
+
+```
+
+```{css change-css-options, eval = TRUE, echo = FALSE}
+
+.remark-code{line-height: 1.5; font-size: 70%} # smaller code font size
+
+```
