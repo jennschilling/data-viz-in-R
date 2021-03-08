@@ -1,7 +1,7 @@
 ---
 title: "Data Visualization in R"
 author: "Jenn Schilling"
-date: "3/6/2021"
+date: "April 12-13, 2021"
 output:
  html_document:
   theme: "flatly" 
@@ -39,9 +39,6 @@ As a result of this webinar, participants will be able to:
 
 
 **Materials developed by Jenn Schilling.**  
-
-This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">
-Creative Commons Attribution-NonCommercial 4.0 International License</a>.
 
 
 # Data Prepartion
@@ -241,8 +238,6 @@ Make a scatter plot
 
 inst_adm_plot <- left_join(inst_list, inst_adm, by = "unitid") %>%
   filter(year == 2019)
-
-head(inst_adm_plot)
 
 ggplot(data = inst_adm_plot,
        mapping = aes(x = sat_score,
