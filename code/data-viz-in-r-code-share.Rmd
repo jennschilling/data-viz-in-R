@@ -379,9 +379,12 @@ ggplot(data = inst_enrlmnt_plot_sub,
 
 # What if we want to see the enrollment by institution and urban area?
 ggplot(data = inst_enrlmnt_plot %>% 
-         filter(lstudy == "All students", gender == "Total", year == 2019),
+         filter(lstudy == "All students", 
+                gender == "Total",
+                year == 2019),
        mapping = aes(x = n_enrl,
-                     y = reorder(instnm, n_enrl))) +
+                     y = reorder(instnm, 
+                                 n_enrl))) +
   geom_col() +
   facet_wrap(~ locale,
              scales = "free_y",
@@ -457,7 +460,8 @@ Add labels and formatting
 inst_compl_plot <- left_join(inst_list, inst_compl, by = "unitid") 
 
 ggplot(data = inst_compl_plot %>% 
-         filter(gender == "Total", unitid == 104179),
+         filter(gender == "Total", 
+                unitid == 104179),
        mapping = aes(x = year,
                      y = n_deg,
                      color = awlevelc)) +
@@ -465,7 +469,8 @@ ggplot(data = inst_compl_plot %>%
 
 # Reorder degree levels
 ggplot(data = inst_compl_plot %>% 
-         filter(gender == "Total", unitid == 104179),
+         filter(gender == "Total", 
+                unitid == 104179),
        mapping = aes(x = year,
                      y = n_deg,
                      color = factor(awlevelc,
@@ -476,7 +481,8 @@ ggplot(data = inst_compl_plot %>%
 
 # Add titles and labels
 ggplot(data = inst_compl_plot %>% 
-         filter(gender == "Total", unitid == 104179),
+         filter(gender == "Total",
+                unitid == 104179),
        mapping = aes(x = year,
                      y = n_deg,
                      color = factor(awlevelc,
@@ -486,11 +492,13 @@ ggplot(data = inst_compl_plot %>%
   geom_line() +
   labs(title = "Number of Degrees Awarded by the University of Arizona by Academic Year",
        x = "Academic Year",
-       y = "")
+       y = "",
+       color = "")
 
-# Move legend to the top and remove legend title
+# Move legend to the top 
 ggplot(data = inst_compl_plot %>% 
-         filter(gender == "Total", unitid == 104179),
+         filter(gender == "Total", 
+                unitid == 104179),
        mapping = aes(x = year,
                      y = n_deg,
                      color = factor(awlevelc,
@@ -506,7 +514,8 @@ ggplot(data = inst_compl_plot %>%
 
 # Add note about data source
 ggplot(data = inst_compl_plot %>% 
-         filter(gender == "Total", unitid == 104179),
+         filter(gender == "Total", 
+                unitid == 104179),
        mapping = aes(x = year,
                      y = n_deg,
                      color = factor(awlevelc,
@@ -524,7 +533,8 @@ ggplot(data = inst_compl_plot %>%
 
 # Add Theme
 ggplot(data = inst_compl_plot %>% 
-         filter(gender == "Total", unitid == 104179),
+         filter(gender == "Total", 
+                unitid == 104179),
        mapping = aes(x = year,
                      y = n_deg,
                      color = factor(awlevelc,
@@ -543,7 +553,8 @@ ggplot(data = inst_compl_plot %>%
 
 # Add commas to y-axis labels
 ggplot(data = inst_compl_plot %>% 
-         filter(gender == "Total", unitid == 104179),
+         filter(gender == "Total", 
+                unitid == 104179),
        mapping = aes(x = year,
                      y = n_deg,
                      color = factor(awlevelc,
@@ -562,7 +573,8 @@ ggplot(data = inst_compl_plot %>%
 
 # Remove decimals from x-axis labels and make them academic year ranges
 ggplot(data = inst_compl_plot %>% 
-         filter(gender == "Total", unitid == 104179),
+         filter(gender == "Total", 
+                unitid == 104179),
        mapping = aes(x = year,
                      y = n_deg,
                      color = factor(awlevelc,
@@ -581,7 +593,8 @@ ggplot(data = inst_compl_plot %>%
   theme(legend.position = "top")
 
 ggplot(data = inst_compl_plot %>% 
-         filter(gender == "Total", unitid == 104179),
+         filter(gender == "Total", 
+                unitid == 104179),
        mapping = aes(x = year,
                      y = n_deg,
                      color = factor(awlevelc,
@@ -591,7 +604,9 @@ ggplot(data = inst_compl_plot %>%
   geom_line() +
   scale_y_continuous(labels = scales::comma) +
   scale_x_continuous(breaks = c(2017, 2018, 2019),
-                     labels = c("2016-17", "2017-18", "2018-18")) +
+                     labels = c("2016-17", 
+                                "2017-18", 
+                                "2018-18")) +
   labs(title = "Number of Degrees Awarded by the University of Arizona by Academic Year",
        x = "Academic Year",
        y = "",
@@ -603,7 +618,8 @@ ggplot(data = inst_compl_plot %>%
 
 # Add points on top of the lines and remove line legend
 ggplot(data = inst_compl_plot %>% 
-         filter(gender == "Total", unitid == 104179),
+         filter(gender == "Total",
+                unitid == 104179),
        mapping = aes(x = year,
                      y = n_deg,
                      color = factor(awlevelc,
@@ -614,7 +630,9 @@ ggplot(data = inst_compl_plot %>%
   geom_point() +
   scale_y_continuous(labels = scales::comma) +
   scale_x_continuous(breaks = c(2017, 2018, 2019),
-                     labels = c("2016-17", "2017-18", "2018-18")) +
+                     labels = c("2016-17", 
+                                "2017-18", 
+                                "2018-18")) +
   labs(title = "Number of Degrees Awarded by the University of Arizona by Academic Year",
        x = "Academic Year",
        y = "",
@@ -625,7 +643,8 @@ ggplot(data = inst_compl_plot %>%
 
 # Change color using ColorBrewer
 ggplot(data = inst_compl_plot %>% 
-         filter(gender == "Total", unitid == 104179),
+         filter(gender == "Total",
+                unitid == 104179),
        mapping = aes(x = year,
                      y = n_deg,
                      color = factor(awlevelc,
@@ -636,7 +655,9 @@ ggplot(data = inst_compl_plot %>%
   geom_point() +
   scale_y_continuous(labels = scales::comma) +
   scale_x_continuous(breaks = c(2017, 2018, 2019),
-                     labels = c("2016-17", "2017-18", "2018-18")) +
+                     labels = c("2016-17", 
+                                "2017-18", 
+                                "2018-18")) +
   scale_color_brewer(palette = "Dark2") +
   labs(title = "Number of Degrees Awarded by the University of Arizona by Academic Year",
        x = "Academic Year",
@@ -648,7 +669,8 @@ ggplot(data = inst_compl_plot %>%
 
 # Change color using manual colors
 ggplot(data = inst_compl_plot %>% 
-         filter(gender == "Total", unitid == 104179),
+         filter(gender == "Total", 
+                unitid == 104179),
        mapping = aes(x = year,
                      y = n_deg,
                      color = factor(awlevelc,
@@ -659,8 +681,12 @@ ggplot(data = inst_compl_plot %>%
   geom_point() +
   scale_y_continuous(labels = scales::comma) +
   scale_x_continuous(breaks = c(2017, 2018, 2019),
-                     labels = c("2016-17", "2017-18", "2018-18")) +
-  scale_color_manual(values = c("#0C234B", "#AB0520", "#378DBD")) +
+                     labels = c("2016-17", 
+                                "2017-18", 
+                                "2018-18")) +
+  scale_color_manual(values = c("#0C234B", 
+                                "#AB0520", 
+                                "#378DBD")) +
   labs(title = "Number of Degrees Awarded by the University of Arizona by Academic Year",
        x = "Academic Year",
        y = "",
@@ -680,7 +706,8 @@ Save a plot
 ```{r save}
 
 line_plot <- ggplot(data = inst_compl_plot %>% 
-                      filter(gender == "Total", unitid == 104179),
+                      filter(gender == "Total", 
+                             unitid == 104179),
                     mapping = aes(x = year,
                                   y = n_deg,
                                   color = factor(awlevelc,
