@@ -674,7 +674,7 @@ inst_enrlmnt_plot_sub <- inst_enrlmnt_plot %>%
          gender == "Total",
          year == 2019) %>%
   group_by(locale) %>%
-  summarize(avg_enrl = mean(n_enrl),
+  summarize(med_enrl = median(n_enrl),
             .groups = "drop")
 
 ```
@@ -683,7 +683,7 @@ inst_enrlmnt_plot_sub <- inst_enrlmnt_plot %>%
 .pull-right[
 ```{r plot-data-5-show, echo = FALSE}
 inst_enrlmnt_plot_sub %>% 
-           select(locale, avg_enrl) %>%
+           select(locale, med_enrl) %>%
   knitr::kable(format = "html")
 ```
 
@@ -698,7 +698,7 @@ inst_enrlmnt_plot_sub %>%
 
 ggplot(data = inst_enrlmnt_plot_sub,
        mapping = aes(x = locale,
-                     y = avg_enrl)) +
+                     y = med_enrl)) +
   geom_col()
 
 ```
@@ -707,7 +707,7 @@ ggplot(data = inst_enrlmnt_plot_sub,
 
 decorate("plot-12", eval = FALSE) %>%
   flair("data = inst_enrlmnt_plot_sub") %>%
-  flair("y = avg_enrl") %>%
+  flair("y = med_enrl") %>%
   knit_print.with_flair()
 
 ```
@@ -728,8 +728,8 @@ decorate("plot-12", eval = FALSE) %>%
 
 ggplot(data = inst_enrlmnt_plot_sub,
        mapping = aes(x = reorder(locale,
-                                 -avg_enrl),
-                     y = avg_enrl)) +
+                                 -med_enrl),
+                     y = med_enrl)) +
   geom_col()
 
 ```
@@ -738,7 +738,7 @@ ggplot(data = inst_enrlmnt_plot_sub,
 
 decorate("plot-13", eval = FALSE) %>%
   flair("reorder(locale,") %>%
-  flair("-avg_enrl),") %>%
+  flair("-med_enrl),") %>%
   knit_print.with_flair()
 
 ```
@@ -816,10 +816,10 @@ decorate("plot-15", eval = FALSE) %>%
 inst_enrlmnt_plot_sub <- inst_enrlmnt_plot %>%
   filter(lstudy == "All students", gender == "Total") %>%
   group_by(year, locale) %>%
-  summarize(avg_enrl = mean(n_enrl),
+  summarize(med_enrl = median(n_enrl),
             .groups = "drop")
 
-sample_n(inst_enrlmnt_plot_sub %>% select(year, locale, avg_enrl), size = 10) %>%
+sample_n(inst_enrlmnt_plot_sub %>% select(year, locale, med_enrl), size = 10) %>%
   knitr::kable(format = "html")
 
 ```
@@ -833,7 +833,7 @@ sample_n(inst_enrlmnt_plot_sub %>% select(year, locale, avg_enrl), size = 10) %>
 
 ggplot(data = inst_enrlmnt_plot_sub,
        mapping = aes(x = year,
-                     y = avg_enrl,
+                     y = med_enrl,
                      fill = locale)) +
   geom_col(position = "dodge") 
 
@@ -864,7 +864,7 @@ decorate("plot-16", eval = FALSE) %>%
 
 ggplot(data = inst_enrlmnt_plot_sub,
        mapping = aes(x = year,
-                     y = avg_enrl,
+                     y = med_enrl,
                      fill = locale)) +
   geom_col(position = "dodge") +
   facet_wrap(~ locale) +
@@ -897,7 +897,7 @@ decorate("plot-17", eval = FALSE) %>%
 
 ggplot(data = inst_enrlmnt_plot_sub,
        mapping = aes(x = year,
-                     y = avg_enrl,
+                     y = med_enrl,
                      fill = locale)) +
   geom_line() +
   facet_wrap(~ locale) +
@@ -929,7 +929,7 @@ decorate("plot-18", eval = FALSE) %>%
 
 ggplot(data = inst_enrlmnt_plot_sub,
        mapping = aes(x = year,
-                     y = avg_enrl,
+                     y = med_enrl,
                      color = locale)) +
   geom_line() +
   facet_wrap(~ locale) +
@@ -1524,7 +1524,7 @@ decorate("plot-32", eval = FALSE) %>%
 ]
 
 .pull-right[
-```{r save-plot-32, eval = FALSE}
+```{r save-plot-32, eval = FALSE, include = FALSE}
 
 ggsave(filename = here("plots", "line_plot.png"),
        plot = line_plot,
@@ -1532,6 +1532,14 @@ ggsave(filename = here("plots", "line_plot.png"),
        width = 8,
        height = 5,
        type = "cairo")
+
+```
+
+```{r decorate-save-plot-32a, echo = FALSE}
+
+decorate("save-plot-32", eval = FALSE) %>%
+  flair('ggsave') %>% 
+  knit_print.with_flair()
 
 ```
 ]

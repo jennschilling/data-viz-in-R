@@ -353,23 +353,23 @@ ggplot(data = inst_enrlmnt_plot %>%
                      fill = instnm)) +
   geom_col()
 
-# What if we want the average enrollment in each area? 
+# What if we want the median enrollment in each area? 
 inst_enrlmnt_plot_sub <- inst_enrlmnt_plot %>%
   filter(lstudy == "All students", gender == "Total", year == 2019) %>%
   group_by(locale) %>%
-  summarize(avg_enrl = mean(n_enrl),
+  summarize(med_enrl = median(n_enrl),
             .groups = "drop")
 
 ggplot(data = inst_enrlmnt_plot_sub,
        mapping = aes(x = locale,
-                     y = avg_enrl)) +
+                     y = med_enrl)) +
   geom_col()
 
-# Sort by average enrollment
-# This time, use the reorder() function to arrange the locale column by the avg_enrl column
+# Sort by median enrollment
+# This time, use the reorder() function to arrange the locale column by the med_enrl column
 ggplot(data = inst_enrlmnt_plot_sub,
-       mapping = aes(x = reorder(locale, -avg_enrl),
-                     y = avg_enrl)) +
+       mapping = aes(x = reorder(locale, -med_enrl),
+                     y = med_enrl)) +
   geom_col()
 
 # What if we want to see the enrollment by institution and urban area?
@@ -393,16 +393,16 @@ Add color to bar graph
 
 ```{r fill-color}
 
-# How has average enrollment changed by urban area over time?
+# How has median enrollment changed by urban area over time?
 inst_enrlmnt_plot_sub <- inst_enrlmnt_plot %>%
   filter(lstudy == "All students", gender == "Total") %>%
   group_by(year, locale) %>%
-  summarize(avg_enrl = mean(n_enrl),
+  summarize(med_enrl = median(n_enrl),
             .groups = "drop")
 
 ggplot(data = inst_enrlmnt_plot_sub,
        mapping = aes(x = year,
-                     y = avg_enrl,
+                     y = med_enrl,
                      fill = locale)) +
   geom_col() 
 
@@ -410,14 +410,14 @@ ggplot(data = inst_enrlmnt_plot_sub,
 # Remove the stacking
 ggplot(data = inst_enrlmnt_plot_sub,
        mapping = aes(x = year,
-                     y = avg_enrl,
+                     y = med_enrl,
                      fill = locale)) +
   geom_col(position = "dodge") 
 
 # Make a different plot for each urban area
 ggplot(data = inst_enrlmnt_plot_sub,
        mapping = aes(x = year,
-                     y = avg_enrl,
+                     y = med_enrl,
                      fill = locale)) +
   geom_col(position = "dodge") +
   facet_wrap(~ locale) +
@@ -426,7 +426,7 @@ ggplot(data = inst_enrlmnt_plot_sub,
 # Maybe it would be better to show this with lines?
 ggplot(data = inst_enrlmnt_plot_sub,
        mapping = aes(x = year,
-                     y = avg_enrl,
+                     y = med_enrl,
                      fill = locale)) +
   geom_line() +
   facet_wrap(~ locale) +
@@ -436,7 +436,7 @@ ggplot(data = inst_enrlmnt_plot_sub,
 # Bars, histograms, and boxplots use fill; lines and points use color
 ggplot(data = inst_enrlmnt_plot_sub,
        mapping = aes(x = year,
-                     y = avg_enrl,
+                     y = med_enrl,
                      color = locale)) +
   geom_line() +
   facet_wrap(~ locale) +
