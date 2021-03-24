@@ -26,7 +26,7 @@ As a result of this webinar, participants will be able to:
 
 **How to Use These Files**
 
-1. Save all three folders in the same directory on your computer.
+1. Save all three folders and the *.here* file to the same directory on your computer.
 
 2. Open the R Markdown document in the *code* folder in RStudio.
 
