@@ -32,7 +32,7 @@ As a result of this webinar, participants will be able to:
 
 3. Run the setup, get-inst-ids, get-adm-data, get-enrlmnt-data, and get-compl-data code chunks to load the libraries, read the data, and process the data. 
 
-Note: The two libraries used are `here` and `tidyverse`. If you do not have these packages installed, be sure to complete the installation prior to running the code by running install.packages(c('here', 'tidyverse')) in the Console of RStudio. 
+Note: The two libraries used are `here` and `tidyverse`. If you do not have these packages installed, be sure to complete the installation prior to running the code by running `install.packages(c('here', 'tidyverse'))` in the Console of RStudio. 
 
 4. Run any of the code chunks that create plots.
 
