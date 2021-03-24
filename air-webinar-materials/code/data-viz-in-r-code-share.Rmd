@@ -393,6 +393,8 @@ Add color to bar graph
 
 ```{r fill-color}
 
+inst_enrlmnt_plot <- left_join(inst_list, inst_enrlmnt, by = "unitid")
+
 # How has median enrollment changed by urban area over time?
 inst_enrlmnt_plot_sub <- inst_enrlmnt_plot %>%
   filter(lstudy == "All students", gender == "Total") %>%
@@ -699,6 +701,8 @@ ggplot(data = inst_compl_plot %>%
 Save a plot
 
 ```{r save}
+
+inst_compl_plot <- left_join(inst_list, inst_compl, by = "unitid") 
 
 line_plot <- ggplot(data = inst_compl_plot %>% 
                       filter(gender == "Total", 
