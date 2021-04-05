@@ -603,7 +603,7 @@ ggplot(data = inst_compl_plot %>%
   scale_x_continuous(breaks = c(2017, 2018, 2019),
                      labels = c("2016-17", 
                                 "2017-18", 
-                                "2018-18")) +
+                                "2018-19")) +
   labs(title = "Number of Degrees Awarded by the University of Arizona by Academic Year",
        x = "Academic Year",
        y = "",
@@ -629,7 +629,7 @@ ggplot(data = inst_compl_plot %>%
   scale_x_continuous(breaks = c(2017, 2018, 2019),
                      labels = c("2016-17", 
                                 "2017-18", 
-                                "2018-18")) +
+                                "2018-19")) +
   labs(title = "Number of Degrees Awarded by the University of Arizona by Academic Year",
        x = "Academic Year",
        y = "",
@@ -654,7 +654,7 @@ ggplot(data = inst_compl_plot %>%
   scale_x_continuous(breaks = c(2017, 2018, 2019),
                      labels = c("2016-17", 
                                 "2017-18", 
-                                "2018-18")) +
+                                "2018-19")) +
   scale_color_brewer(palette = "Dark2") +
   labs(title = "Number of Degrees Awarded by the University of Arizona by Academic Year",
        x = "Academic Year",
@@ -680,7 +680,7 @@ ggplot(data = inst_compl_plot %>%
   scale_x_continuous(breaks = c(2017, 2018, 2019),
                      labels = c("2016-17", 
                                 "2017-18", 
-                                "2018-18")) +
+                                "2018-19")) +
   scale_color_manual(values = c("#0C234B", 
                                 "#AB0520", 
                                 "#378DBD")) +
@@ -717,7 +717,7 @@ line_plot <- ggplot(data = inst_compl_plot %>%
   geom_point() +
   scale_y_continuous(labels = scales::comma) +
   scale_x_continuous(breaks = c(2017, 2018, 2019),
-                     labels = c("2016-17", "2017-18", "2018-18")) +
+                     labels = c("2016-17", "2017-18", "2018-19")) +
   scale_color_manual(values = c("#0C234B", "#AB0520", "#378DBD")) +
   labs(title = "Number of Degrees Awarded by the University of Arizona by Academic Year",
        x = "Academic Year",
