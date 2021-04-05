@@ -49,39 +49,19 @@ class: center, middle, inverse
  &lt;/thead&gt;
 &lt;tbody&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Ohio State University-Main Campus &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1355 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 44.0 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; University of North Carolina at Chapel Hill &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1405 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 44.5 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; University of Minnesota-Twin Cities &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1370 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 41.5 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; University of California-Davis &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1290 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 40.0 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; University of Florida &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1390 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 44.5 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; University of Washington-Seattle Campus &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1345 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 43.5 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; University of Arizona &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 1235 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 35.5 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; University of California-Los Angeles &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1415 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 46.5 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; University of Iowa &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1235 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 36.5 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; University of Wisconsin-Madison &lt;/td&gt;
@@ -89,14 +69,34 @@ class: center, middle, inverse
    &lt;td style="text-align:right;"&gt; 43.0 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Pennsylvania State University-Main Campus &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1190 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 38.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Michigan State University &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1210 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 37.5 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; University of Washington-Seattle Campus &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1345 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 43.5 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Texas A &amp;amp; M University-College Station &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1275 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 41.5 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; University of Minnesota-Twin Cities &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1370 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 41.5 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; University of Maryland-College Park &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 1375 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 46.0 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; University of Illinois at Urbana-Champaign &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1340 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 42.0 &lt;/td&gt;
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -362,18 +362,177 @@ ggplot(data = inst_adm_plot,
 
 ---
 
-# Plotting in R - Format Text Labels
-
-.pull-left[
 
 
+count: false
+ 
+#Plotting in R - Format Text Labels
+.panel1-plot-7-auto[
 
-&lt;code class ='r hljs remark-code'&gt;ggplot(data = inst_adm_plot,&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;mapping = aes(x = year,&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;y = n_sat,&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;group = instnm)) +&lt;br&gt;&amp;nbsp;&amp;nbsp;geom_line() +&lt;br&gt;&amp;nbsp;&amp;nbsp;geom_text(data = inst_adm_plot %&gt;% &lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;filter(year == 2019),&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;mapping = aes(&lt;span style='background-color:#ffff7f'&gt;x = Inf&lt;/span&gt;,&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;y = n_sat,&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;label = instnm),&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span style='background-color:#ffff7f'&gt;hjust = -.01&lt;/span&gt;) +&lt;br&gt;&amp;nbsp;&amp;nbsp;&lt;span style='background-color:#ffff7f'&gt;coord_cartesian(clip = "off")&lt;/span&gt; +&lt;br&gt;&amp;nbsp;&amp;nbsp;&lt;span style='background-color:#ffff7f'&gt;theme(plot.margin = margin(0, 250, 0, 0))&lt;/span&gt;&lt;/code&gt;
+```r
+*ggplot(data = inst_adm_plot,
+*      mapping = aes(x = year,
+*                    y = n_sat,
+*                    group = instnm))
+```
+]
+ 
+.panel2-plot-7-auto[
+&lt;img src="data-viz-in-r-slides_files/figure-html/plot-7_auto_01_output-1.png" width="504" /&gt;
 ]
 
-.pull-right[
-&lt;img src="data-viz-in-r-slides_files/figure-html/output-plot-7-1.png" width="504" /&gt;
+---
+count: false
+ 
+#Plotting in R - Format Text Labels
+.panel1-plot-7-auto[
+
+```r
+ggplot(data = inst_adm_plot,
+       mapping = aes(x = year,
+                     y = n_sat,
+                     group = instnm)) +
+* geom_line()
+```
 ]
+ 
+.panel2-plot-7-auto[
+&lt;img src="data-viz-in-r-slides_files/figure-html/plot-7_auto_02_output-1.png" width="504" /&gt;
+]
+
+---
+count: false
+ 
+#Plotting in R - Format Text Labels
+.panel1-plot-7-auto[
+
+```r
+ggplot(data = inst_adm_plot,
+       mapping = aes(x = year,
+                     y = n_sat,
+                     group = instnm)) +
+  geom_line() +
+* geom_text(data = inst_adm_plot %&gt;%
+*                  filter(year == 2019),
+*           mapping = aes(x = Inf,
+*                         y = n_sat,
+*                         label = instnm),
+*           hjust = -.01)
+```
+]
+ 
+.panel2-plot-7-auto[
+&lt;img src="data-viz-in-r-slides_files/figure-html/plot-7_auto_03_output-1.png" width="504" /&gt;
+]
+
+---
+count: false
+ 
+#Plotting in R - Format Text Labels
+.panel1-plot-7-auto[
+
+```r
+ggplot(data = inst_adm_plot,
+       mapping = aes(x = year,
+                     y = n_sat,
+                     group = instnm)) +
+  geom_line() +
+  geom_text(data = inst_adm_plot %&gt;%
+                   filter(year == 2019),
+            mapping = aes(x = Inf,
+                          y = n_sat,
+                          label = instnm),
+            hjust = -.01) +
+* coord_cartesian(clip = "off")
+```
+]
+ 
+.panel2-plot-7-auto[
+&lt;img src="data-viz-in-r-slides_files/figure-html/plot-7_auto_04_output-1.png" width="504" /&gt;
+]
+
+---
+count: false
+ 
+#Plotting in R - Format Text Labels
+.panel1-plot-7-auto[
+
+```r
+ggplot(data = inst_adm_plot,
+       mapping = aes(x = year,
+                     y = n_sat,
+                     group = instnm)) +
+  geom_line() +
+  geom_text(data = inst_adm_plot %&gt;%
+                   filter(year == 2019),
+            mapping = aes(x = Inf,
+                          y = n_sat,
+                          label = instnm),
+            hjust = -.01) +
+  coord_cartesian(clip = "off") +
+* theme(plot.margin = margin(0, 250, 0, 0))
+```
+]
+ 
+.panel2-plot-7-auto[
+&lt;img src="data-viz-in-r-slides_files/figure-html/plot-7_auto_05_output-1.png" width="504" /&gt;
+]
+
+---
+count: false
+ 
+#Plotting in R - Format Text Labels
+.panel1-plot-7-auto[
+
+```r
+ggplot(data = inst_adm_plot,
+       mapping = aes(x = year,
+                     y = n_sat,
+                     group = instnm)) +
+  geom_line() +
+  geom_text(data = inst_adm_plot %&gt;%
+                   filter(year == 2019),
+            mapping = aes(x = Inf,
+                          y = n_sat,
+                          label = instnm),
+            hjust = -.01) +
+  coord_cartesian(clip = "off") +
+  theme(plot.margin = margin(0, 250, 0, 0))
+```
+]
+ 
+.panel2-plot-7-auto[
+&lt;img src="data-viz-in-r-slides_files/figure-html/plot-7_auto_06_output-1.png" width="504" /&gt;
+]
+
+&lt;style&gt;
+.panel1-plot-7-auto {
+  color: black;
+  width: 49%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel2-plot-7-auto {
+  color: black;
+  width: 49%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+.panel3-plot-7-auto {
+  color: black;
+  width: NA%;
+  hight: 33%;
+  float: left;
+  padding-left: 1%;
+  font-size: 80%
+}
+&lt;/style&gt;
+
+
 
 ---
 
@@ -400,33 +559,8 @@ class: center, middle, inverse
    &lt;td style="text-align:left;"&gt; City: Small &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:right;"&gt; 228723 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Texas A &amp;amp; M University-College Station &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; City: Midsize &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:right;"&gt; 171100 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Michigan State University &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; City: Small &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:right;"&gt; 104179 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; University of Arizona &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; City: Large &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
    &lt;td style="text-align:right;"&gt; 236948 &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; University of Washington-Seattle Campus &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; City: Large &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:right;"&gt; 240444 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; University of Wisconsin-Madison &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; City: Large &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:right;"&gt; 228778 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; The University of Texas at Austin &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; City: Large &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
@@ -435,9 +569,34 @@ class: center, middle, inverse
    &lt;td style="text-align:left;"&gt; City: Small &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 145637 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; University of Illinois at Urbana-Champaign &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; City: Small &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 163286 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; University of Maryland-College Park &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Suburb: Large &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 104179 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; University of Arizona &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; City: Large &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
    &lt;td style="text-align:right;"&gt; 110662 &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; University of California-Los Angeles &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; City: Large &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 174066 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; University of Minnesota-Twin Cities &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; City: Large &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 214777 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Pennsylvania State University-Main Campus &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; City: Small &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:right;"&gt; 110644 &lt;/td&gt;
@@ -494,84 +653,84 @@ class: center, middle, inverse
  &lt;/thead&gt;
 &lt;tbody&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:right;"&gt; 2017 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; University of Minnesota-Twin Cities &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; City: Large &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2018 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Pennsylvania State University-Main Campus &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; City: Small &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; Undergraduate &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Men &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 21482 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 2018 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; University of North Carolina at Chapel Hill &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; City: Small &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; All students &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; Women &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 18619 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 17448 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:right;"&gt; 2019 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; University of Wisconsin-Madison &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; City: Large &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Graduate &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Total &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 11858 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:right;"&gt; 2019 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; University of Florida &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; City: Midsize &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Undergraduate &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Total &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 35405 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:right;"&gt; 2019 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; University of Maryland-College Park &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Suburb: Large &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2018 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; University of Illinois at Urbana-Champaign &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; City: Small &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; Graduate &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; Women &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 5027 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 7265 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 2018 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Michigan State University &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; City: Small &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Undergraduate &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Women &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 19985 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:right;"&gt; 2017 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; University of Wisconsin-Madison &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; City: Large &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; University of Iowa &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; City: Small &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; Graduate &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; Men &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 5739 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3729 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:right;"&gt; 2018 &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; University of North Carolina at Chapel Hill &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; City: Small &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; Undergraduate &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Total &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 19117 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:right;"&gt; 2019 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; University of Arizona &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; City: Large &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; All students &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; Men &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 20815 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 7766 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:right;"&gt; 2019 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; University of Washington-Seattle Campus &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; City: Large &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2018 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; University of Illinois at Urbana-Champaign &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; City: Small &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; All students &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Women &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 22795 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 2018 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; University of Iowa &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; City: Small &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; Undergraduate &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; Total &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 32046 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:right;"&gt; 2019 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; University of Wisconsin-Madison &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; City: Large &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Graduate &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Men &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 5670 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 23989 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:right;"&gt; 2017 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; University of Wisconsin-Madison &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; City: Large &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Undergraduate &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Women &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 16078 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; University of Florida &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; City: Midsize &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Graduate &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Total &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 17422 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 2017 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Texas A &amp;amp; M University-College Station &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; City: Midsize &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; All students &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Total &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 67929 &lt;/td&gt;
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -839,39 +998,29 @@ ggplot(data = inst_enrlmnt_plot %&gt;%
  &lt;/thead&gt;
 &lt;tbody&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:right;"&gt; 2017 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Suburb: Large &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 40521.0 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:right;"&gt; 2019 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; City: Small &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 49809.0 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:right;"&gt; 2017 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; City: Midsize &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 60299.0 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
    &lt;td style="text-align:right;"&gt; 2019 &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; Suburb: Large &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 40743.0 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:right;"&gt; 2019 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; City: Midsize &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 60566.5 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:right;"&gt; 2019 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; City: Large &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 47576.0 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
    &lt;td style="text-align:right;"&gt; 2017 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; City: Small &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 47119.0 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Suburb: Small &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 37380.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 2018 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; City: Midsize &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 60448.5 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 2019 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Suburb: Small &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 38634.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 2018 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Suburb: Small &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 38167.0 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:right;"&gt; 2017 &lt;/td&gt;
@@ -879,14 +1028,24 @@ ggplot(data = inst_enrlmnt_plot %&gt;%
    &lt;td style="text-align:right;"&gt; 46166.0 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 2017 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; City: Midsize &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 60299.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 2017 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Suburb: Large &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 40521.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
    &lt;td style="text-align:right;"&gt; 2018 &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; City: Large &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 47400.0 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:right;"&gt; 2017 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Suburb: Small &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 37380.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2019 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; City: Midsize &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 60566.5 &lt;/td&gt;
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -968,84 +1127,84 @@ ggplot(data = inst_enrlmnt_plot %&gt;%
  &lt;/thead&gt;
 &lt;tbody&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:right;"&gt; 2017 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2018 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 110662 &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; University of California-Los Angeles &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; Doctor's degree &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; Men &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 742 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 692 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:right;"&gt; 2017 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 153658 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; University of Iowa &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2018 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 145637 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; University of Illinois at Urbana-Champaign &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Master's degree &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Total &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3765 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 2018 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 199120 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; University of North Carolina at Chapel Hill &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Doctor's degree &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Total &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1208 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 2018 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 199120 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; University of North Carolina at Chapel Hill &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Master's degree &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Women &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1162 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 2018 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 228778 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; The University of Texas at Austin &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; Bachelor's degree &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Men &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 2173 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:right;"&gt; 2017 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 204796 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Ohio State University-Main Campus &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Master's degree &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Men &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1230 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:right;"&gt; 2017 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 214777 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Pennsylvania State University-Main Campus &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Master's degree &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Women &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 678 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:right;"&gt; 2017 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 236948 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; University of Washington-Seattle Campus &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Master's degree &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Men &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1785 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Total &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 9420 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:right;"&gt; 2018 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 163286 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; University of Maryland-College Park &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 240444 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; University of Wisconsin-Madison &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; Doctor's degree &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Women &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 312 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:right;"&gt; 2018 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 163286 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; University of Maryland-College Park &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Master's degree &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Men &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1448 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:right;"&gt; 2018 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 171100 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Michigan State University &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Doctor's degree &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Women &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 601 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Total &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1480 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:right;"&gt; 2019 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 153658 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; University of Iowa &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 171100 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Michigan State University &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; Master's degree &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Total &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1307 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Women &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1291 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 2019 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 214777 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Pennsylvania State University-Main Campus &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Master's degree &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Men &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 749 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:right;"&gt; 2019 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 240444 &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; University of Wisconsin-Madison &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Master's degree &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Women &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1174 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Bachelor's degree &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Men &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3486 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 2019 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 240444 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; University of Wisconsin-Madison &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Doctor's degree &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Total &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1536 &lt;/td&gt;
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -1185,7 +1344,7 @@ ggplot(data = inst_compl_plot %&gt;%
 
 
 
-&lt;code class ='r hljs remark-code'&gt;ggplot(data = inst_compl_plot %&gt;% &lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;filter(gender == "Total", &lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;unitid == 104179),&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;mapping = aes(x = year,&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;y = n_deg,&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;color = factor(awlevelc,&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;levels = c("Bachelor's degree",&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"Master's degree",&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"Doctor's degree")))) +&lt;br&gt;&amp;nbsp;&amp;nbsp;geom_line() +&lt;br&gt;&amp;nbsp;&amp;nbsp;scale_y_continuous(labels = scales::comma) +&lt;br&gt;&amp;nbsp;&amp;nbsp;scale_x_continuous(breaks = c(2017, 2018, 2019),&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span style='background-color:#ffff7f'&gt;labels = c("2016-17",&lt;/span&gt; &lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span style='background-color:#ffff7f'&gt;"2017-18",&lt;/span&gt; &lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span style='background-color:#ffff7f'&gt;"2018-18")&lt;/span&gt;) +&lt;br&gt;&amp;nbsp;&amp;nbsp;labs(title = "Number of Degrees Awarded by the University of Arizona by Academic Year",&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;x = "Academic Year",&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;y = "",&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;color = "",&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;caption = "Data from IPEDS Completions Survey") +&lt;br&gt;&amp;nbsp;&amp;nbsp;theme_minimal() +&lt;br&gt;&amp;nbsp;&amp;nbsp;theme(legend.position = "top")&lt;/code&gt;
+&lt;code class ='r hljs remark-code'&gt;ggplot(data = inst_compl_plot %&gt;% &lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;filter(gender == "Total", &lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;unitid == 104179),&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;mapping = aes(x = year,&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;y = n_deg,&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;color = factor(awlevelc,&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;levels = c("Bachelor's degree",&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"Master's degree",&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"Doctor's degree")))) +&lt;br&gt;&amp;nbsp;&amp;nbsp;geom_line() +&lt;br&gt;&amp;nbsp;&amp;nbsp;scale_y_continuous(labels = scales::comma) +&lt;br&gt;&amp;nbsp;&amp;nbsp;scale_x_continuous(breaks = c(2017, 2018, 2019),&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span style='background-color:#ffff7f'&gt;labels = c("2016-17",&lt;/span&gt; &lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span style='background-color:#ffff7f'&gt;"2017-18",&lt;/span&gt; &lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span style='background-color:#ffff7f'&gt;"2018-19")&lt;/span&gt;) +&lt;br&gt;&amp;nbsp;&amp;nbsp;labs(title = "Number of Degrees Awarded by the University of Arizona by Academic Year",&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;x = "Academic Year",&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;y = "",&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;color = "",&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;caption = "Data from IPEDS Completions Survey") +&lt;br&gt;&amp;nbsp;&amp;nbsp;theme_minimal() +&lt;br&gt;&amp;nbsp;&amp;nbsp;theme(legend.position = "top")&lt;/code&gt;
 ]
 
 .pull-right[
@@ -1200,7 +1359,7 @@ ggplot(data = inst_compl_plot %&gt;%
 
 
 
-&lt;code class ='r hljs remark-code'&gt;ggplot(data = inst_compl_plot %&gt;% &lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;filter(gender == "Total",&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;unitid == 104179),&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;mapping = aes(x = year,&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;y = n_deg,&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;color = factor(awlevelc,&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;levels = c("Bachelor's degree",&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"Master's degree",&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"Doctor's degree")))) +&lt;br&gt;&amp;nbsp;&amp;nbsp;geom_line(&lt;span style='background-color:#ffff7f'&gt;show.legend = FALSE&lt;/span&gt;) +&lt;br&gt;&amp;nbsp;&amp;nbsp;&lt;span style='background-color:#ffff7f'&gt;geom_point()&lt;/span&gt; +&lt;br&gt;&amp;nbsp;&amp;nbsp;scale_y_continuous(labels = scales::comma) +&lt;br&gt;&amp;nbsp;&amp;nbsp;scale_x_continuous(breaks = c(2017, 2018, 2019),&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;labels = c("2016-17", &lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"2017-18", &lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"2018-18")) +&lt;br&gt;&amp;nbsp;&amp;nbsp;labs(title = "Number of Degrees Awarded by the University of Arizona by Academic Year",&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;x = "Academic Year",&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;y = "",&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;color = "",&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;caption = "Data from IPEDS Completions Survey") +&lt;br&gt;&amp;nbsp;&amp;nbsp;theme_minimal() +&lt;br&gt;&amp;nbsp;&amp;nbsp;theme(legend.position = "top")&lt;/code&gt;
+&lt;code class ='r hljs remark-code'&gt;ggplot(data = inst_compl_plot %&gt;% &lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;filter(gender == "Total",&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;unitid == 104179),&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;mapping = aes(x = year,&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;y = n_deg,&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;color = factor(awlevelc,&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;levels = c("Bachelor's degree",&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"Master's degree",&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"Doctor's degree")))) +&lt;br&gt;&amp;nbsp;&amp;nbsp;geom_line(&lt;span style='background-color:#ffff7f'&gt;show.legend = FALSE&lt;/span&gt;) +&lt;br&gt;&amp;nbsp;&amp;nbsp;&lt;span style='background-color:#ffff7f'&gt;geom_point()&lt;/span&gt; +&lt;br&gt;&amp;nbsp;&amp;nbsp;scale_y_continuous(labels = scales::comma) +&lt;br&gt;&amp;nbsp;&amp;nbsp;scale_x_continuous(breaks = c(2017, 2018, 2019),&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;labels = c("2016-17", &lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"2017-18", &lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"2018-19")) +&lt;br&gt;&amp;nbsp;&amp;nbsp;labs(title = "Number of Degrees Awarded by the University of Arizona by Academic Year",&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;x = "Academic Year",&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;y = "",&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;color = "",&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;caption = "Data from IPEDS Completions Survey") +&lt;br&gt;&amp;nbsp;&amp;nbsp;theme_minimal() +&lt;br&gt;&amp;nbsp;&amp;nbsp;theme(legend.position = "top")&lt;/code&gt;
 ]
 
 .pull-right[
@@ -1215,7 +1374,7 @@ ggplot(data = inst_compl_plot %&gt;%
 
 
 
-&lt;code class ='r hljs remark-code'&gt;ggplot(data = inst_compl_plot %&gt;% &lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;filter(gender == "Total",&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;unitid == 104179),&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;mapping = aes(x = year,&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;y = n_deg,&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;color = factor(awlevelc,&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;levels = c("Bachelor's degree",&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"Master's degree",&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"Doctor's degree")))) +&lt;br&gt;&amp;nbsp;&amp;nbsp;geom_line(show.legend = FALSE) +&lt;br&gt;&amp;nbsp;&amp;nbsp;geom_point() +&lt;br&gt;&amp;nbsp;&amp;nbsp;scale_y_continuous(labels = scales::comma) +&lt;br&gt;&amp;nbsp;&amp;nbsp;scale_x_continuous(breaks = c(2017, 2018, 2019),&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;labels = c("2016-17", &lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"2017-18", &lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"2018-18")) +&lt;br&gt;&amp;nbsp;&amp;nbsp;&lt;span style='background-color:#ffff7f'&gt;scale_color_brewer(palette = "Dark2")&lt;/span&gt; +&lt;br&gt;&amp;nbsp;&amp;nbsp;labs(title = "Number of Degrees Awarded by the University of Arizona by Academic Year",&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;x = "Academic Year",&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;y = "",&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;color = "",&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;caption = "Data from IPEDS Completions Survey") +&lt;br&gt;&amp;nbsp;&amp;nbsp;theme_minimal() +&lt;br&gt;&amp;nbsp;&amp;nbsp;theme(legend.position = "top")&lt;/code&gt;
+&lt;code class ='r hljs remark-code'&gt;ggplot(data = inst_compl_plot %&gt;% &lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;filter(gender == "Total",&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;unitid == 104179),&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;mapping = aes(x = year,&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;y = n_deg,&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;color = factor(awlevelc,&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;levels = c("Bachelor's degree",&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"Master's degree",&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"Doctor's degree")))) +&lt;br&gt;&amp;nbsp;&amp;nbsp;geom_line(show.legend = FALSE) +&lt;br&gt;&amp;nbsp;&amp;nbsp;geom_point() +&lt;br&gt;&amp;nbsp;&amp;nbsp;scale_y_continuous(labels = scales::comma) +&lt;br&gt;&amp;nbsp;&amp;nbsp;scale_x_continuous(breaks = c(2017, 2018, 2019),&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;labels = c("2016-17", &lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"2017-18", &lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"2018-19")) +&lt;br&gt;&amp;nbsp;&amp;nbsp;&lt;span style='background-color:#ffff7f'&gt;scale_color_brewer(palette = "Dark2")&lt;/span&gt; +&lt;br&gt;&amp;nbsp;&amp;nbsp;labs(title = "Number of Degrees Awarded by the University of Arizona by Academic Year",&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;x = "Academic Year",&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;y = "",&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;color = "",&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;caption = "Data from IPEDS Completions Survey") +&lt;br&gt;&amp;nbsp;&amp;nbsp;theme_minimal() +&lt;br&gt;&amp;nbsp;&amp;nbsp;theme(legend.position = "top")&lt;/code&gt;
 ]
 
 .pull-right[
@@ -1230,7 +1389,7 @@ ggplot(data = inst_compl_plot %&gt;%
 
 
 
-&lt;code class ='r hljs remark-code'&gt;ggplot(data = inst_compl_plot %&gt;% &lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;filter(gender == "Total",&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;unitid == 104179),&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;mapping = aes(x = year,&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;y = n_deg,&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;color = factor(awlevelc,&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;levels = c("Bachelor's degree",&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"Master's degree",&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"Doctor's degree")))) +&lt;br&gt;&amp;nbsp;&amp;nbsp;geom_line(show.legend = FALSE) +&lt;br&gt;&amp;nbsp;&amp;nbsp;geom_point() +&lt;br&gt;&amp;nbsp;&amp;nbsp;scale_y_continuous(labels = scales::comma) +&lt;br&gt;&amp;nbsp;&amp;nbsp;scale_x_continuous(breaks = c(2017, 2018, 2019),&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;labels = c("2016-17", &lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"2017-18", &lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"2018-18")) +&lt;br&gt;&amp;nbsp;&amp;nbsp;&lt;span style='background-color:#ffff7f'&gt;scale_color_manual(values = c("#0C234B",&lt;/span&gt; &lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span style='background-color:#ffff7f'&gt;"#AB0520",&lt;/span&gt; &lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span style='background-color:#ffff7f'&gt;"#378DBD"))&lt;/span&gt; &amp;nbsp;+&lt;br&gt;&amp;nbsp;&amp;nbsp;labs(title = "Number of Degrees Awarded by the University of Arizona by Academic Year",&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;x = "Academic Year",&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;y = "",&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;color = "",&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;caption = "Data from IPEDS Completions Survey") +&lt;br&gt;&amp;nbsp;&amp;nbsp;theme_minimal() +&lt;br&gt;&amp;nbsp;&amp;nbsp;theme(legend.position = "top")&lt;/code&gt;
+&lt;code class ='r hljs remark-code'&gt;ggplot(data = inst_compl_plot %&gt;% &lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;filter(gender == "Total",&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;unitid == 104179),&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;mapping = aes(x = year,&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;y = n_deg,&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;color = factor(awlevelc,&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;levels = c("Bachelor's degree",&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"Master's degree",&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"Doctor's degree")))) +&lt;br&gt;&amp;nbsp;&amp;nbsp;geom_line(show.legend = FALSE) +&lt;br&gt;&amp;nbsp;&amp;nbsp;geom_point() +&lt;br&gt;&amp;nbsp;&amp;nbsp;scale_y_continuous(labels = scales::comma) +&lt;br&gt;&amp;nbsp;&amp;nbsp;scale_x_continuous(breaks = c(2017, 2018, 2019),&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;labels = c("2016-17", &lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"2017-18", &lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"2018-19")) +&lt;br&gt;&amp;nbsp;&amp;nbsp;&lt;span style='background-color:#ffff7f'&gt;scale_color_manual(values = c("#0C234B",&lt;/span&gt; &lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span style='background-color:#ffff7f'&gt;"#AB0520",&lt;/span&gt; &lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span style='background-color:#ffff7f'&gt;"#378DBD"))&lt;/span&gt; &amp;nbsp;+&lt;br&gt;&amp;nbsp;&amp;nbsp;labs(title = "Number of Degrees Awarded by the University of Arizona by Academic Year",&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;x = "Academic Year",&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;y = "",&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;color = "",&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;caption = "Data from IPEDS Completions Survey") +&lt;br&gt;&amp;nbsp;&amp;nbsp;theme_minimal() +&lt;br&gt;&amp;nbsp;&amp;nbsp;theme(legend.position = "top")&lt;/code&gt;
 ]
 
 .pull-right[
@@ -1245,7 +1404,7 @@ ggplot(data = inst_compl_plot %&gt;%
 
 
 
-&lt;code class ='r hljs remark-code'&gt;&lt;span style='background-color:#ffff7f'&gt;line_plot &lt;-&lt;/span&gt; ggplot(&lt;br&gt;&amp;nbsp;&amp;nbsp;data = inst_compl_plot %&gt;% &lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;filter(gender == "Total",&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;unitid == 104179),&lt;br&gt;&amp;nbsp;&amp;nbsp;mapping = aes(x = year,&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;y = n_deg,&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;color = factor(awlevelc,&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;levels = c("Bachelor's degree",&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"Master's degree",&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"Doctor's degree")))) +&lt;br&gt;&amp;nbsp;&amp;nbsp;geom_line(show.legend = FALSE) +&lt;br&gt;&amp;nbsp;&amp;nbsp;geom_point() +&lt;br&gt;&amp;nbsp;&amp;nbsp;scale_y_continuous(labels = scales::comma) +&lt;br&gt;&amp;nbsp;&amp;nbsp;scale_x_continuous(breaks = c(2017, 2018, 2019),&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;labels = c("2016-17", "2017-18","2018-18")) +&lt;br&gt;&amp;nbsp;&amp;nbsp;scale_color_manual(values = c("#0C234B", "#AB0520", "#378DBD")) &amp;nbsp;+&lt;br&gt;&amp;nbsp;&amp;nbsp;labs(title = "Number of Degrees Awarded by the University of Arizona by Academic Year",&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;x = "Academic Year",&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;y = "",&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;color = "",&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;caption = "Data from IPEDS Completions Survey") +&lt;br&gt;&amp;nbsp;&amp;nbsp;theme_minimal() +&lt;br&gt;&amp;nbsp;&amp;nbsp;theme(legend.position = "top")&lt;/code&gt;
+&lt;code class ='r hljs remark-code'&gt;&lt;span style='background-color:#ffff7f'&gt;line_plot &lt;-&lt;/span&gt; ggplot(&lt;br&gt;&amp;nbsp;&amp;nbsp;data = inst_compl_plot %&gt;% &lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;filter(gender == "Total",&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;unitid == 104179),&lt;br&gt;&amp;nbsp;&amp;nbsp;mapping = aes(x = year,&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;y = n_deg,&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;color = factor(awlevelc,&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;levels = c("Bachelor's degree",&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"Master's degree",&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"Doctor's degree")))) +&lt;br&gt;&amp;nbsp;&amp;nbsp;geom_line(show.legend = FALSE) +&lt;br&gt;&amp;nbsp;&amp;nbsp;geom_point() +&lt;br&gt;&amp;nbsp;&amp;nbsp;scale_y_continuous(labels = scales::comma) +&lt;br&gt;&amp;nbsp;&amp;nbsp;scale_x_continuous(breaks = c(2017, 2018, 2019),&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;labels = c("2016-17", "2017-18","2018-19")) +&lt;br&gt;&amp;nbsp;&amp;nbsp;scale_color_manual(values = c("#0C234B", "#AB0520", "#378DBD")) &amp;nbsp;+&lt;br&gt;&amp;nbsp;&amp;nbsp;labs(title = "Number of Degrees Awarded by the University of Arizona by Academic Year",&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;x = "Academic Year",&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;y = "",&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;color = "",&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;caption = "Data from IPEDS Completions Survey") +&lt;br&gt;&amp;nbsp;&amp;nbsp;theme_minimal() +&lt;br&gt;&amp;nbsp;&amp;nbsp;theme(legend.position = "top")&lt;/code&gt;
 ]
 
 .pull-right[

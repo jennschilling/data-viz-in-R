@@ -469,9 +469,6 @@ decorate("plot-6", eval = FALSE) %>%
 
 ---
 
-# Plotting in R - Format Text Labels
-
-.pull-left[
 ```{r plot-7, include = FALSE}
 
 ggplot(data = inst_adm_plot,
@@ -490,23 +487,7 @@ ggplot(data = inst_adm_plot,
 
 ```
 
-```{r decorate-plot-7a, echo = FALSE}
-
-decorate("plot-7", eval = FALSE) %>%
-  flair("x = Inf") %>%
-  flair("hjust = -.01") %>%
-  flair('coord_cartesian(clip = "off")') %>%
-  flair("theme(plot.margin = margin(0, 250, 0, 0))") %>%
-  knit_print.with_flair()
-
-```
-]
-
-.pull-right[
-```{r output-plot-7, ref.label = 'plot-7', echo = FALSE}
-
-```
-]
+`r chunk_reveal(chunk_name = "plot-7", title = "#Plotting in R - Format Text Labels", widths = c(50,50))`
 
 ---
 
@@ -1302,7 +1283,7 @@ ggplot(data = inst_compl_plot %>%
   scale_x_continuous(breaks = c(2017, 2018, 2019),
                      labels = c("2016-17", 
                                 "2017-18", 
-                                "2018-18")) +
+                                "2018-19")) +
   labs(title = "Number of Degrees Awarded by the University of Arizona by Academic Year",
        x = "Academic Year",
        y = "",
@@ -1318,7 +1299,7 @@ ggplot(data = inst_compl_plot %>%
 decorate("plot-28", eval = FALSE) %>%
   flair('labels = c("2016-17",') %>%
   flair('"2017-18",') %>%
-  flair('"2018-18")') %>%
+  flair('"2018-19")') %>%
   knit_print.with_flair()
 
 ```
@@ -1352,7 +1333,7 @@ ggplot(data = inst_compl_plot %>%
   scale_x_continuous(breaks = c(2017, 2018, 2019),
                      labels = c("2016-17", 
                                 "2017-18", 
-                                "2018-18")) +
+                                "2018-19")) +
   labs(title = "Number of Degrees Awarded by the University of Arizona by Academic Year",
        x = "Academic Year",
        y = "",
@@ -1401,7 +1382,7 @@ ggplot(data = inst_compl_plot %>%
   scale_x_continuous(breaks = c(2017, 2018, 2019),
                      labels = c("2016-17", 
                                 "2017-18", 
-                                "2018-18")) +
+                                "2018-19")) +
   scale_color_brewer(palette = "Dark2") +
   labs(title = "Number of Degrees Awarded by the University of Arizona by Academic Year",
        x = "Academic Year",
@@ -1450,7 +1431,7 @@ ggplot(data = inst_compl_plot %>%
   scale_x_continuous(breaks = c(2017, 2018, 2019),
                      labels = c("2016-17", 
                                 "2017-18", 
-                                "2018-18")) +
+                                "2018-19")) +
   scale_color_manual(values = c("#0C234B", 
                                 "#AB0520", 
                                 "#378DBD"))  +
@@ -1502,7 +1483,7 @@ line_plot <- ggplot(
   geom_point() +
   scale_y_continuous(labels = scales::comma) +
   scale_x_continuous(breaks = c(2017, 2018, 2019),
-                     labels = c("2016-17", "2017-18","2018-18")) +
+                     labels = c("2016-17", "2017-18","2018-19")) +
   scale_color_manual(values = c("#0C234B", "#AB0520", "#378DBD"))  +
   labs(title = "Number of Degrees Awarded by the University of Arizona by Academic Year",
        x = "Academic Year",
