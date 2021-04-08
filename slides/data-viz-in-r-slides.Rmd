@@ -229,7 +229,7 @@ inst_compl <- inst_compl %>%
 inst_adm_plot <- left_join(inst_list, inst_adm, by = "unitid") %>%
   filter(year == 2019)
 
-sample_n(inst_adm_plot %>% select(instnm, sat_score, act_score), size = 10) %>%
+sample_n(inst_adm_plot %>% select(instnm, n_applicants, n_admits, n_enrl, sat_score, act_score), size = 10) %>%
   knitr::kable(format = "html")
 
 ```
@@ -289,6 +289,127 @@ decorate("plot-1", eval = FALSE) %>%
 ---
 
 `r chunk_reveal(chunk_name = "plot-1", title = "#Plotting in R", widths = c(50,50))`
+
+---
+
+# Plotting in R - Scatter Plots
+
+.pull-left[
+```{r scatter-2, include = FALSE}
+
+ggplot(data = inst_adm_plot, 
+       mapping = aes(x = sat_score,
+                     y = act_score,
+                     color = instnm)) +
+  geom_point()
+
+```
+
+```{r decorate-scatter-2, echo = FALSE}
+
+decorate("scatter-2", eval = FALSE) %>%
+  flair("color = instnm") %>%
+  knit_print.with_flair()
+
+```
+
+]
+.pull-right[
+```{r output-scatter-2, ref.label = 'scatter-2', echo = FALSE}
+
+```
+]
+
+---
+
+# Plotting in R - Scatter Plots
+
+.pull-left[
+```{r scatter-3, include = FALSE}
+
+ggplot(data = inst_adm_plot, 
+       mapping = aes(x = sat_score,
+                     y = act_score,
+                     color = n_enrl)) +
+  geom_point()
+
+```
+
+```{r decorate-scatter-3, echo = FALSE}
+
+decorate("scatter-3", eval = FALSE) %>%
+  flair("color = n_enrl") %>%
+  knit_print.with_flair()
+
+```
+
+]
+.pull-right[
+```{r output-scatter-3, ref.label = 'scatter-3', echo = FALSE}
+
+```
+]
+
+---
+
+# Plotting in R - Scatter Plots
+.pull-left[
+```{r scatter-4, include = FALSE}
+
+ggplot(data = inst_adm_plot, 
+       mapping = aes(x = sat_score,
+                     y = act_score,
+                     size = n_enrl)) +
+  geom_point()
+
+```
+
+```{r decorate-scatter-4, echo = FALSE}
+
+decorate("scatter-4", eval = FALSE) %>%
+  flair("size = n_enrl") %>%
+  knit_print.with_flair()
+
+```
+
+]
+.pull-right[
+```{r output-scatter-4, ref.label = 'scatter-4', echo = FALSE}
+
+```
+]
+
+---
+
+# Plotting in R - Scatter Plots
+.pull-left[
+```{r scatter-5, include = FALSE}
+
+ggplot(data = inst_adm_plot, 
+       mapping = aes(x = sat_score,
+                     y = act_score,
+                     size = n_enrl,
+                     color = locale)) +
+  geom_point()
+
+```
+
+```{r decorate-scatter-5, echo = FALSE}
+
+decorate("scatter-5", eval = FALSE) %>%
+  flair("size = n_enrl") %>%
+  flair("color = locale") %>%
+  knit_print.with_flair()
+
+```
+
+]
+.pull-right[
+```{r output-scatter-5, ref.label = 'scatter-5', echo = FALSE}
+
+```
+]
+
 
 ---
 
@@ -381,7 +502,7 @@ ggplot(data = inst_adm_plot,
 
 ```
 
-```{r decorate-plot-4a, echo = FALSE}
+```{r decorate-plot-4, echo = FALSE}
 
 decorate("plot-4", eval = FALSE) %>%
   flair("y = n_sat") %>%
@@ -392,6 +513,37 @@ decorate("plot-4", eval = FALSE) %>%
 
 .pull-right[
 ```{r output-plot-4, ref.label = 'plot-4', echo = FALSE}
+
+```
+]
+
+---
+
+# Plotting in R - Another Line Graph Example
+
+.pull-left[
+```{r plot-4a, include = FALSE}
+
+ggplot(data = inst_adm_plot,
+       mapping = aes(x = year,
+                     y = n_sat,
+                     group = instnm,
+                     color = instnm)) +
+  geom_line()
+
+```
+
+```{r decorate-plot-4a, echo = FALSE}
+
+decorate("plot-4a", eval = FALSE) %>%
+  flair("color = instnm") %>%
+  knit_print.with_flair()
+
+```
+]
+
+.pull-right[
+```{r output-plot-4a, ref.label = 'plot-4a', echo = FALSE}
 
 ```
 ]
@@ -466,6 +618,78 @@ decorate("plot-6", eval = FALSE) %>%
 ```
 ]
 
+---
+
+# Plotting in R - Adding Text for Only 2019
+
+.pull-left[
+```{r plot-6b, include = FALSE}
+
+ggplot(data = inst_adm_plot,
+       mapping = aes(x = year,
+                     y = n_sat,
+                     group = instnm)) +
+    geom_line() +
+    geom_text(data = inst_adm_plot %>% 
+                  filter(year == 2019),
+              mapping = aes(x = year,
+                            y = n_sat,
+                            label = instnm),
+              hjust = 0)
+
+```
+
+```{r decorate-plot-6b, echo = FALSE}
+
+decorate("plot-6b", eval = FALSE) %>%
+  flair("hjust = 0)") %>%
+  knit_print.with_flair()
+
+```
+]
+
+.pull-right[
+```{r output-plot-6b, ref.label = 'plot-6b', echo = FALSE}
+
+```
+]
+
+---
+
+# Plotting in R - Adding Text for Only 2019
+
+.pull-left[
+```{r plot-6c, include = FALSE}
+
+ggplot(data = inst_adm_plot,
+       mapping = aes(x = year,
+                     y = n_sat,
+                     group = instnm)) +
+    geom_line() +
+    geom_text(data = inst_adm_plot %>% 
+                  filter(year == 2019),
+              mapping = aes(x = year,
+                            y = n_sat,
+                            label = instnm),
+              hjust = 0) + 
+    scale_x_continuous(limits = c(2017, 2020.5))
+
+```
+
+```{r decorate-plot-6c, echo = FALSE}
+
+decorate("plot-6c", eval = FALSE) %>%
+  flair("scale_x_continuous(limits = c(2017, 2020.5))") %>%
+  knit_print.with_flair()
+
+```
+]
+
+.pull-right[
+```{r output-plot-6c, ref.label = 'plot-6c', echo = FALSE}
+
+```
+]
 
 ---
 
